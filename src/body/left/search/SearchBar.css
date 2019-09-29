@@ -1,8 +1,7 @@
 
 .SearchContainer {
   background-color: red;
-  height: 160px;
-  line-height: 220px;
+  height: 100px;
   position: relative;
   text-align: center;
   width: 100%;
@@ -13,6 +12,9 @@
   background-color: white;
   border: 5px solid black;
   width: 400px;
-  height: 50px;
+  height: 30px;
+  font-size: 20px;
   display: inline-block;
+  margin-top: 20px;
+  padding: 10px;
 }
