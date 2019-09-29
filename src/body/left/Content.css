@@ -1,0 +1,43 @@
+.Content {
+  background-color: red;
+  width: 65%;
+}
+
+.Pokemon {
+  background-color: white;
+  width: var(--pokemon-box-width);
+  height: 300px;
+  margin: 0 auto;
+  border: 5px solid black;
+}
+
+.PokemonHeader {
+  font-family: 'PokeFont';
+  height: 100px;
+}
+
+.PokemonName {
+  width: calc(var(--pokemon-box-width) / 1.5);
+  font-size: 40px;
+  float: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.PokemonNumber {
+  width: calc(var(--pokemon-box-width) / 1.5);
+  font-size: 40px;
+  float: left;
+  height: 50px;
+  padding-left: 10px;
+}
+
+.PokemonType {
+  height: 40px;
+  width: 40px;
+}
+
+.PokemonDescription {
+  width: calc(var(--pokemon-box-width) - 60);
+  padding: 20px;
+}

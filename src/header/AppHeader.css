@@ -1,0 +1,28 @@
+.AppHeader {
+  height: 14%;
+}
+
+.Title {
+  float: left;
+}
+
+.PokeBall {
+  float: right;
+  height: 50px;
+  width: 50px;
+}
+
+.TitleBar {
+  align-items: center;
+  background-color: red;
+  border-bottom: 5px solid black;
+  color: white;
+  display: flex;
+  font-family: 'PokeFont';
+  font-size: 50px;
+  justify-content: center;
+  padding: 2% 0% 2% 0%;
+  position: absolute;
+  width: 100%;
+  z-index: 5000;
+}
