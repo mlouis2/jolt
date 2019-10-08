@@ -9,7 +9,7 @@ const AppHeader = () => (
       <div className="Title">
         JOLT
       </div>
-      <img className="PokeBall" src={pokeball} alt="test"/>
+      <img className="PokeBall" src={pokeball} alt="pokeball"/>
     </div>
   </div>
 )

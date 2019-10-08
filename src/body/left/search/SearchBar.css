@@ -8,13 +8,37 @@
   z-index: 1000;
 }
 
-.SearchBar {
+.SearchBarContainer {
   background-color: white;
   border: 5px solid black;
   width: 400px;
-  height: 30px;
   font-size: 20px;
   display: inline-block;
   margin-top: 40px;
-  padding: 10px;
+}
+
+.SearchBar {
+  border: none;
+  float: left;
+  font-size: 20px;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+  width: 80%;
+}
+
+.SearchButton {
+  background: none;
+  border: none;
+  float: right;
+}
+
+.SearchButton:disabled {
+  opacity: 0.2;
+}
+
+.SearchIcon {
+  height: 30px;
+  padding-top: 5px;
+  width: 30px;
 }
