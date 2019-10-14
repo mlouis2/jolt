@@ -1,16 +1,32 @@
 import React from 'react'
 
 import './Content.css'
+import data from '../fakeData.json'
 
 import Carousel from './carousel/Carousel'
 import SearchBar from './search/SearchBar'
 
-// Note how functional components that don’t have additional logic simply return their markup.
-const Content = () => (
+function Content() {
+  return (
   <div className="Content">
     <SearchBar />
     <Carousel />
   </div>
-)
+  )
+}
 
-export default Content
+let pokemon = []
+
+function readData() {
+  data.results.forEach((result) => {
+    pokemon.push(result.name);
+  })
+  console.log(pokemon)
+}
+
+readData();
+
+export {
+  Content,
+  pokemon
+}
