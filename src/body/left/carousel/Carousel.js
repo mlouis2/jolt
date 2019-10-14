@@ -11,6 +11,10 @@ function ResponsiveCarousel() {
           console.log("new index is " + e);
      }
 
+     function titleCase(str) {
+          return str.charAt(0).toUpperCase() + str.substring(1);
+     }
+
      function formatNumber(number) {
           let strNumber = number.toString();
           while (strNumber.length < 3) {
@@ -26,10 +30,10 @@ function ResponsiveCarousel() {
           console.log(pokemon)
           pokemon.forEach((pokemon) => {
                result.push(Pokemon(
-                    'http://lorempixel.com/output/cats-q-c-640-480-3.jpg',
-                    pokemon.name,
+                    pokemon.sprite,
+                    titleCase(pokemon.name),
                     formatNumber(pokemon.number),
-                    pokemon.type,
+                    titleCase(pokemon.type),
                     'description!',
                     index
                ));
@@ -51,14 +55,14 @@ function ResponsiveCarousel() {
          useKeyboardArrows={true}
          width="100%"
          centerMode={true}>
-         {pokemonList.map((obj, index) => {
-             return (
-               <div key={index}>
-               {obj}
-               </div>
-             )
-        })}
-      </Carousel>
+              {pokemonList.map((obj, index) => {
+                  return (
+                    <div key={index}>
+                    {obj}
+                    </div>
+                  )
+              })}
+         </Carousel>
 )
 }
 
