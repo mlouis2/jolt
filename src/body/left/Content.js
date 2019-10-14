@@ -19,7 +19,7 @@ let pokemon = []
 
 function readData() {
   data.results.forEach((result) => {
-    pokemon.push(result.name);
+    pokemon.push(result);
   })
   console.log(pokemon)
 }

@@ -8,7 +8,15 @@ function ResponsiveCarousel() {
      const [pokemonList, setPokemonList] = useState([]);
 
      function onFocusChange(e) {
-          console.log("new index is " + e)
+          console.log("new index is " + e);
+     }
+
+     function formatNumber(number) {
+          let strNumber = number.toString();
+          while (strNumber.length < 3) {
+               strNumber = "0" + strNumber;
+          }
+          return "#" + strNumber;
      }
 
      useEffect(() => {
@@ -19,9 +27,9 @@ function ResponsiveCarousel() {
           pokemon.forEach((pokemon) => {
                result.push(Pokemon(
                     'http://lorempixel.com/output/cats-q-c-640-480-3.jpg',
-                    pokemon,
-                    '#001',
-                    'fire',
+                    pokemon.name,
+                    formatNumber(pokemon.number),
+                    pokemon.type,
                     'description!',
                     index
                ));
