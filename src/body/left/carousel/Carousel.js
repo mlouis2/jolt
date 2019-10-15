@@ -3,9 +3,13 @@ import { Carousel } from 'react-responsive-carousel';
 import { pokemon } from '../Content.js'
 
 import './Carousel.css'
+import './SearchBar.css'
+import search from '../../../images/search.png';
 
 function ResponsiveCarousel() {
      const [pokemonList, setPokemonList] = useState([]);
+     const [filteredList, setFilteredList] = useState([]);
+     const [activeSearch, setActiveSearch] = useState(false);
 
      function onFocusChange(e) {
           console.log("new index is " + e);
@@ -24,65 +28,99 @@ function ResponsiveCarousel() {
      }
 
      useEffect(() => {
-          let result = [];
-          let index = 0;
-          console.log("pokemon list pre-parse is ")
-          console.log(pokemon)
-          pokemon.forEach((pokemon) => {
-               result.push(Pokemon(
-                    pokemon.sprite,
-                    titleCase(pokemon.name),
-                    formatNumber(pokemon.number),
-                    titleCase(pokemon.type),
-                    'description!',
-                    index
-               ));
-               index++;
-          })
-          setPokemonList([result])
+         let result = [];
+         pokemon.forEach((pokemon, index) => {
+              result.push({
+                   sprite: pokemon.sprite,
+                   name: titleCase(pokemon.name),
+                   number: formatNumber(pokemon.number),
+                   type: titleCase(pokemon.type),
+                   description: 'description!',
+                   index
+              });
+         })
+         setPokemonList(result);
      }, [])
 
      return (
-         <Carousel
-         className="Carousel"
-         axis="vertical"
-         onChange={onFocusChange}
-         onClickItem={onFocusChange}
-         showArrows={false}
-         showThumbs={false}
-         showIndicators={false}
-         showStatus={false}
-         useKeyboardArrows={true}
-         width="100%"
-         centerMode={true}>
-              {pokemonList.map((obj, index) => {
-                  return (
-                    <div key={index}>
-                    {obj}
-                    </div>
-                  )
-              })}
-         </Carousel>
-)
+         <div>
+             <div className="SearchContainer">
+               <SearchInput />
+             </div>
+             <Carousel
+             className="Carousel"
+             axis="vertical"
+             onChange={onFocusChange}
+             onClickItem={onFocusChange}
+             showArrows={false}
+             showThumbs={false}
+             showIndicators={false}
+             showStatus={false}
+             useKeyboardArrows={true}
+             width="100%"
+             centerMode={true}>
+                  {(activeSearch ? filteredList : pokemonList).map(p => {
+                      return (
+                        <div key={p.index}>
+                         {Pokemon(p.sprite, p.name, p.number, p.type, p.description, p.index)};
+                        </div>
+                      )
+
+                  })}
+             </Carousel>
+         </div>
+    );
+
+    function SearchInput() {
+      const [searchDisabled, setDisabled] = useState(true);
+      const [searchInput, setInput] = useState('')
+
+      function handleTextInput(e) {
+        if (e.target.value === '') {
+            setDisabled(true);
+            setActiveSearch(false);
+        } else {
+            setDisabled(false)
+        }
+        setInput(e.target.value);
+      }
+
+      function handleSearch(e) {
+        setActiveSearch(true);
+        setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchInput.toLowerCase())));
+      }
+
+      return (
+        <div className="SearchBarContainer">
+          <input type="text" className="SearchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!">
+          </input>
+          <button className="SearchButton" onClick={handleSearch} disabled={searchDisabled}>
+            <img className="SearchIcon" src={search} alt="search"/>
+          </button>
+        </div>
+      )
+    }
 }
 
-function Pokemon(pokemonIconSrc, name, pokemonNumber, pokemonType, pokemonDescription, index) {
+function Pokemon(sprite, name, id, type, description, index) {
      return (
           <div key={index} className="Pokemon">
             <div className="PokemonHeader">
-               <img src={pokemonIconSrc} />
+               <img src={sprite} />
                <div className="PokemonName">
                  {name}
                </div>
                <div className="PokemonNumberAndType">
-                 {pokemonNumber} {pokemonType}
+                 {id} {type}
                </div>
             </div>
             <div className="PokemonDescription">
-               {pokemonDescription}
+               {description}
             </div>
           </div>
      );
 }
 
-export default ResponsiveCarousel
+export {
+    ResponsiveCarousel
+}

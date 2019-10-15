@@ -3,14 +3,12 @@ import React from 'react'
 import './Content.css'
 import data from '../fakeData.json'
 
-import Carousel from './carousel/Carousel'
-import SearchBar from './search/SearchBar'
+import { ResponsiveCarousel } from './carousel/Carousel'
 
 function Content() {
   return (
   <div className="Content">
-    <SearchBar />
-    <Carousel />
+    <ResponsiveCarousel />
   </div>
   )
 }
@@ -21,7 +19,6 @@ function readData() {
   data.results.forEach((result) => {
     pokemon.push(result);
   })
-  console.log(pokemon)
 }
 
 readData();
