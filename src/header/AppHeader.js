@@ -6,10 +6,12 @@ import pokeball from '../images/pokeball.png';
 const AppHeader = () => (
   <div className="AppHeader">
     <div className="TitleBar" style={{}}>
-      <div className="Title">
-        JOLT
-      </div>
-      <img className="PokeBall" src={pokeball} alt="pokeball"/>
+      <a href="/" className="TitleLink">
+        <div className="Title">
+          JOLT
+        </div>
+        <img className="PokeBall" src={pokeball} alt="pokeball"/>
+      </a>
     </div>
   </div>
 )

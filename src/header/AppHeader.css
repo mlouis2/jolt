@@ -3,6 +3,7 @@
 }
 
 .Title {
+  color: white;
   float: left;
 }
 
@@ -23,6 +24,7 @@
   justify-content: center;
   padding: 2% 0% 2% 0%;
   position: absolute;
+  text-decoration: none;
   width: 100%;
   z-index: 5000;
 }
