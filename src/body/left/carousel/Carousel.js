@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import { pokemon } from '../Content.js'
+import { Pokemon, titleCase, formatNumber } from './Pokemon'
 
 import './Carousel.css'
 import './SearchBar.css'
@@ -12,19 +13,7 @@ function ResponsiveCarousel() {
     const [activeSearch, setActiveSearch] = useState(false);
 
     function onFocusChange(e) {
-        console.log("new index is " + e);
-    }
-
-    function titleCase(str) {
-        return str.charAt(0).toUpperCase() + str.substring(1);
-    }
-
-    function formatNumber(number) {
-        let strNumber = number.toString();
-        while (strNumber.length < 3) {
-            strNumber = "0" + strNumber;
-        }
-        return "#" + strNumber;
+        // console.log("pokemon is " + filteredList[e].name);
     }
 
     useEffect(() => {
@@ -35,7 +24,7 @@ function ResponsiveCarousel() {
                 name: titleCase(pokemon.name),
                 number: formatNumber(pokemon.number),
                 type: titleCase(pokemon.type),
-                description: 'description!',
+                description: pokemon.description,
                 index
             });
         })
@@ -71,7 +60,8 @@ function ResponsiveCarousel() {
     );
 
     function SearchInput() {
-        const [search, setSearch] = useState({disabled: true, input: ''});
+
+         const [search, setSearch] = useState({input: ''});
 
         useEffect(() => {
             window.addEventListener("keydown", onKeyPressed);
@@ -85,46 +75,32 @@ function ResponsiveCarousel() {
 
         function handleTextInput(e) {
             if (e.target.value === "") {
-                setSearch({disabled: true, input: e.target.value});
+                if (activeSearch) {
+                    setFilteredList(pokemonList)
+                }
+                setSearch({input: e.target.value});
                 setActiveSearch(false);
             }
-            setSearch({disabled: false, input: e.target.value});
+            setSearch({input: e.target.value});
         }
 
         function handleSearch(e) {
             setActiveSearch(true);
             setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(search.input.toLowerCase())));
+            console.log("search input is " + search.input);
+            setSearch({input: search.input});
         }
 
         return (
             <div className="SearchBarContainer">
-            <input type="text" className="SearchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!">
+            <input type="text" className="SearchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
             </input>
-            <button className="SearchButton" onClick={handleSearch} disabled={search.disabled}>
+            <button className="SearchButton" onClick={handleSearch} disabled={search.input === ""}>
             <img className="SearchIcon" src={searchIcon} alt="search"/>
             </button>
             </div>
         )
     }
-}
-
-function Pokemon(sprite, name, id, type, description, index) {
-    return (
-        <div key={index} className="Pokemon">
-        <div className="PokemonHeader">
-        <img src={sprite} />
-        <div className="PokemonName">
-        {name}
-        </div>
-        <div className="PokemonNumberAndType">
-        {id} {type}
-        </div>
-        </div>
-        <div className="PokemonDescription">
-        {description}
-        </div>
-        </div>
-    );
 }
 
 export {
