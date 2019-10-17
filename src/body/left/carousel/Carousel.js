@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import { pokemon } from '../Content.js'
-import { Pokemon, titleCase, formatNumber } from './Pokemon'
+import { Pokemon, titleCase, formatNumber, formatTypes } from './Pokemon'
 
 import './Carousel.css'
 import './SearchBar.css'
@@ -23,7 +23,7 @@ function ResponsiveCarousel() {
                 sprite: pokemon.sprite,
                 name: titleCase(pokemon.name),
                 number: formatNumber(pokemon.number),
-                type: titleCase(pokemon.type),
+                type: formatTypes(pokemon.types),
                 description: pokemon.description,
                 index
             });
