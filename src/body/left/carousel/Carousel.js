@@ -13,7 +13,6 @@ const arrowKeyCodes = [37, 38, 39, 40];
 function ResponsiveCarousel() {
     const [pokemonList, setPokemonList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
-    const [activeSearch, setActiveSearch] = useState(false);
     const [search, setSearch] = useState({input: ''});
     const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
     const [displayDetailedView, setDisplayDetailedView] = useState(true);
@@ -68,7 +67,7 @@ function ResponsiveCarousel() {
         useKeyboardArrows={true}
         width="100%"
         centerMode={true}>
-        {(activeSearch ? filteredList : pokemonList).map(p => {
+        {(search.input !== '' ? filteredList : pokemonList).map(p => {
             return (
                 <div key={p.index}>
                 {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)};
@@ -84,45 +83,41 @@ function ResponsiveCarousel() {
 
     function SearchInput() {
 
+        const searchRef = useRef();
+
         useEffect(() => {
             window.addEventListener("keydown", onKeyPressed);
             document.getElementById("searchBar").focus();
         }, [search])
 
         function onKeyPressed(event) {
-            if (event.keyCode === 13 && search.input !== "") {
-                handleSearch(null);
-            } else if (arrowKeyCodes.includes(event.keyCode)){
+            if (arrowKeyCodes.includes(event.keyCode)){
                 document.getElementById("searchBar").blur();
             }
         }
 
         function handleTextInput(e) {
+            const prev = searchRef.current;
+            searchRef.current = e.target.value;
+            setSearch({input: e.target.value});
             if (e.target.value === "") {
-                if (activeSearch) {
+                if (prev !== '') {
                     setFilteredList(pokemonList)
                 }
-                setSearch({input: e.target.value});
-                setActiveSearch(false);
+            } else {
+                handleSearch();
             }
-            setSearch({input: e.target.value});
         }
 
-        function handleSearch(e) {
-            setActiveSearch(true);
-            setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(search.input.toLowerCase())));
-            setSearch({input: search.input});
+        function handleSearch() {
+            setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchRef.current.toLowerCase())));
             indexRef.current = 0;
-            // setDisplayDetailedView(false);
         }
 
         return (
             <div className="SearchBarContainer">
             <input type="text" className="SearchBar" id="searchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
             </input>
-            <button className="SearchButton" onClick={handleSearch} disabled={search.input === ""}>
-            <img className="SearchIcon" src={searchIcon} alt="search"/>
-            </button>
             </div>
         )
     }
