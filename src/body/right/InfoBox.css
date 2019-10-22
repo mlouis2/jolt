@@ -1,10 +1,10 @@
 .InfoBox {
-     background-color: white;
-     border: 5px solid black;
-     height: 70%;
-     margin: 60px 0px 50px 0px;
-     text-align: -webkit-center;
-     width: 80%;
+  background-color: white;
+  border: 5px solid black;
+  height: 60vh;
+  margin: 0px 0px 50px 0px;
+  text-align: -webkit-center;
+  width: 80%;
 }
 
 .InfoBox img {
@@ -16,17 +16,18 @@
 }
 
 .InfoBox .PokemonName {
-     font-size: 20px;
-     text-align: left;
+  font-size: 20px;
+  text-align: left;
 }
 
 .InfoBox .PokemonNumber {
-     font-size: 30px;
-     text-align: left;
+  font-size: 30px;
+  text-align: left;
 }
 
 .InfoBox .PokemonDescription {
-     text-align: left;
+  font-size: 15px;
+  text-align: left;
 }
 
 .Evolution {

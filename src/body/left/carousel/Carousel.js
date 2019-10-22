@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import { pokemon } from '../Content.js'
 import { Pokemon, titleCase, formatNumber, formatTypes } from './Pokemon'
+import DetailedView from '../../right/DetailedView'
 
 import './Carousel.css'
 import './SearchBar.css'
@@ -11,9 +12,16 @@ function ResponsiveCarousel() {
     const [pokemonList, setPokemonList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
     const [activeSearch, setActiveSearch] = useState(false);
+    const [search, setSearch] = useState({input: ''});
+
+    let activePokemonName = '';
 
     function onFocusChange(e) {
-        // console.log("pokemon is " + filteredList[e].name);
+        activePokemonName = filteredList[e].name;
+    }
+
+    function onClick(e) {
+        activePokemonName = filteredList[e].name;
     }
 
     useEffect(() => {
@@ -29,6 +37,8 @@ function ResponsiveCarousel() {
             });
         })
         setPokemonList(result);
+        setFilteredList(result);
+        activePokemonName = result[0].name;
     }, [])
 
     return (
@@ -40,7 +50,7 @@ function ResponsiveCarousel() {
         className="Carousel"
         axis="vertical"
         onChange={onFocusChange}
-        onClickItem={onFocusChange}
+        onClickItem={onClick}
         showArrows={false}
         showThumbs={false}
         showIndicators={false}
@@ -61,10 +71,9 @@ function ResponsiveCarousel() {
 
     function SearchInput() {
 
-         const [search, setSearch] = useState({input: ''});
-
         useEffect(() => {
             window.addEventListener("keydown", onKeyPressed);
+            document.getElementById("searchBar").focus();
         }, [search])
 
         function onKeyPressed(event) {
@@ -87,13 +96,12 @@ function ResponsiveCarousel() {
         function handleSearch(e) {
             setActiveSearch(true);
             setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(search.input.toLowerCase())));
-            console.log("search input is " + search.input);
             setSearch({input: search.input});
         }
 
         return (
             <div className="SearchBarContainer">
-            <input type="text" className="SearchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
+            <input type="text" className="SearchBar" id="searchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
             </input>
             <button className="SearchButton" onClick={handleSearch} disabled={search.input === ""}>
             <img className="SearchIcon" src={searchIcon} alt="search"/>

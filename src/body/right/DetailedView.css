@@ -1,8 +1,5 @@
-
 .DetailedView {
-  background-color: red;
-  display: none; /* previously flex */
-  height: 100%;
+  display: flex;
   justify-content: center;
   width: 35%;
 }

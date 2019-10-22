@@ -9,7 +9,6 @@ import DetailedView from './right/DetailedView'
 const AppBody = () => (
   <div className="AppBody">
     <Content />
-    <DetailedView />
   </div>
 )
 
