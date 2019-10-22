@@ -1,5 +1,5 @@
 .DetailedView {
-  display: flex;
+  display: flex; /* flex */
   justify-content: center;
-  width: 35%;
+  width: 30%;
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import { pokemon } from '../Content.js'
 import { Pokemon, titleCase, formatNumber, formatTypes } from './Pokemon'
@@ -8,20 +8,24 @@ import './Carousel.css'
 import './SearchBar.css'
 import searchIcon from '../../../images/search.png';
 
+const arrowKeyCodes = [37, 38, 39, 40];
+
 function ResponsiveCarousel() {
     const [pokemonList, setPokemonList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
     const [activeSearch, setActiveSearch] = useState(false);
     const [search, setSearch] = useState({input: ''});
+    const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
 
-    let activePokemonName = '';
+    const indexRef = useRef();
 
     function onFocusChange(e) {
-        activePokemonName = filteredList[e].name;
+        indexRef.current = e;
     }
 
     function onClick(e) {
-        activePokemonName = filteredList[e].name;
+        indexRef.current = e;
+        setCurrentPokemonIndex(e);
     }
 
     useEffect(() => {
@@ -38,7 +42,7 @@ function ResponsiveCarousel() {
         })
         setPokemonList(result);
         setFilteredList(result);
-        activePokemonName = result[0].name;
+        // activePokemonName = result[0].name;
     }, [])
 
     return (
@@ -51,6 +55,7 @@ function ResponsiveCarousel() {
         axis="vertical"
         onChange={onFocusChange}
         onClickItem={onClick}
+        selectedItem={indexRef.current}
         showArrows={false}
         showThumbs={false}
         showIndicators={false}
@@ -66,6 +71,7 @@ function ResponsiveCarousel() {
             )
         })}
         </Carousel>
+        <DetailedView />
         </div>
     );
 
@@ -79,6 +85,8 @@ function ResponsiveCarousel() {
         function onKeyPressed(event) {
             if (event.keyCode === 13 && search.input !== "") {
                 handleSearch(null);
+            } else if (arrowKeyCodes.includes(event.keyCode)){
+                document.getElementById("searchBar").blur();
             }
         }
 
