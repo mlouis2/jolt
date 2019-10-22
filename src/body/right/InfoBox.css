@@ -19,14 +19,8 @@
   width: initial;
 }
 
-.InfoBox .PokemonNumber {
-  font-size: 20px;
-  padding-left: 10px;
-  text-align: left;
-}
-
 .InfoBox .PokemonNumberAndType {
-  font-size: 15px;
+  font-size: 20px;
   text-align: left;
 }
 

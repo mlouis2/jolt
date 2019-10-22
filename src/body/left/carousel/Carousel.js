@@ -16,16 +16,22 @@ function ResponsiveCarousel() {
     const [activeSearch, setActiveSearch] = useState(false);
     const [search, setSearch] = useState({input: ''});
     const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
+    const [displayDetailedView, setDisplayDetailedView] = useState(true);
 
     const indexRef = useRef();
 
     function onFocusChange(e) {
         indexRef.current = e;
+        setCurrentPokemonIndex(e);
     }
 
     function onClick(e) {
-        indexRef.current = e;
-        setCurrentPokemonIndex(e);
+        if (indexRef.current === e) {
+            setDisplayDetailedView(!displayDetailedView);
+        } else {
+            indexRef.current = e;
+            setCurrentPokemonIndex(e);
+        }
     }
 
     useEffect(() => {
@@ -42,7 +48,6 @@ function ResponsiveCarousel() {
         })
         setPokemonList(result);
         setFilteredList(result);
-        // activePokemonName = result[0].name;
     }, [])
 
     return (
@@ -71,7 +76,9 @@ function ResponsiveCarousel() {
             )
         })}
         </Carousel>
-        <DetailedView currentPokemon={filteredList[currentPokemonIndex]}/>
+        {displayDetailedView && (
+          <DetailedView currentPokemon={filteredList[currentPokemonIndex]} />
+        )}
         </div>
     );
 
@@ -105,6 +112,8 @@ function ResponsiveCarousel() {
             setActiveSearch(true);
             setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(search.input.toLowerCase())));
             setSearch({input: search.input});
+            indexRef.current = 0;
+            // setDisplayDetailedView(false);
         }
 
         return (

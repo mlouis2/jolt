@@ -15,12 +15,11 @@ function InfoBox(props) {
                     {currentPokemon.name}
                     </div>
                     <div className="PokemonNumberAndType">
-                    {currentPokemon.number} {currentPokemon.types}
+                    {currentPokemon.number}<br/>{currentPokemon.types}
                     </div>
                     </div>
                     <div className="PokemonDescription">
-                    {currentPokemon.name} is {currentPokemon.number}, a {currentPokemon.types.toLowerCase()} Pokémon. {currentPokemon.description} Click to
-                    see {currentPokemon.name}&apos;s moves and evolution.
+                    {currentPokemon.name} is {currentPokemon.number}, a {currentPokemon.types.toLowerCase()} Pokémon. {currentPokemon.description}
                     </div>
                   <div className="Evolution">
                   </div>
