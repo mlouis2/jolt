@@ -35,7 +35,7 @@ function ResponsiveCarousel() {
                 sprite: pokemon.sprite,
                 name: titleCase(pokemon.name),
                 number: formatNumber(pokemon.number),
-                type: formatTypes(pokemon.types),
+                types: formatTypes(pokemon.types),
                 description: pokemon.description,
                 index
             });
@@ -66,12 +66,12 @@ function ResponsiveCarousel() {
         {(activeSearch ? filteredList : pokemonList).map(p => {
             return (
                 <div key={p.index}>
-                {Pokemon(p.sprite, p.name, p.number, p.type, p.description, p.index)};
+                {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)};
                 </div>
             )
         })}
         </Carousel>
-        <DetailedView />
+        <DetailedView currentPokemon={filteredList[currentPokemonIndex]}/>
         </div>
     );
 

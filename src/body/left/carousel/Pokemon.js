@@ -16,7 +16,7 @@ function formatTypes(types) {
     return types.map(s => titleCase(s)).join('/');
 }
 
-function Pokemon(sprite, name, id, types, description, index) {
+function Pokemon(sprite, name, number, types, description, index) {
     return (
         <div key={index} className="Pokemon">
         <div className="PokemonHeader">
@@ -25,11 +25,11 @@ function Pokemon(sprite, name, id, types, description, index) {
         {name}
         </div>
         <div className="PokemonNumberAndType">
-        {id} {types}
+        {number} {types}
         </div>
         </div>
         <div className="PokemonDescription">
-        {name} is {id}, a {types.toLowerCase()} Pokémon. {description} Click to
+        {name} is {number}, a {types.toLowerCase()} Pokémon. {description} Click to
         see {name}&apos;s moves and evolution.
         </div>
         </div>
