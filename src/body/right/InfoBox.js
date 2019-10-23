@@ -7,10 +7,11 @@ import '../left/Content.css'
 function InfoBox(props) {
      const currentPokemon = props.currentPokemon;
      if (currentPokemon !== undefined) {
+          const imgAlt = "Image of the Pokémon " + currentPokemon.name + ".";
           return (
                <div className="InfoBox">
                     <div className="PokemonHeader">
-                    <img src={currentPokemon.sprite} />
+                    <img src={currentPokemon.sprite} alt={imgAlt}/>
                     <div className="PokemonName">
                     {currentPokemon.name}
                     </div>

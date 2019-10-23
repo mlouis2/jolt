@@ -1,17 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import { pokemon } from '../Content.js'
-import { Pokemon, titleCase, formatNumber, formatTypes } from './Pokemon'
+import { Pokemon } from './Pokemon'
 import DetailedView from '../../right/DetailedView'
 
 import './Carousel.css'
 import './SearchBar.css'
-import searchIcon from '../../../images/search.png';
 
 const arrowKeyCodes = [37, 38, 39, 40];
 
-function ResponsiveCarousel() {
-    const [pokemonList, setPokemonList] = useState([]);
+function ResponsiveCarousel(props) {
+    const pokemonList = props.pokemonList;
     const [filteredList, setFilteredList] = useState([]);
     const [search, setSearch] = useState({input: ''});
     const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
@@ -34,20 +32,8 @@ function ResponsiveCarousel() {
     }
 
     useEffect(() => {
-        let result = [];
-        pokemon.forEach((pokemon, index) => {
-            result.push({
-                sprite: pokemon.sprite,
-                name: titleCase(pokemon.name),
-                number: formatNumber(pokemon.number),
-                types: formatTypes(pokemon.types),
-                description: pokemon.description,
-                index
-            });
-        })
-        setPokemonList(result);
-        setFilteredList(result);
-    }, [])
+        setFilteredList(pokemonList);
+    }, [pokemonList])
 
     return (
         <div>
@@ -88,7 +74,7 @@ function ResponsiveCarousel() {
         useEffect(() => {
             window.addEventListener("keydown", onKeyPressed);
             document.getElementById("searchBar").focus();
-        }, [search])
+        }, [])
 
         function onKeyPressed(event) {
             if (arrowKeyCodes.includes(event.keyCode)){
