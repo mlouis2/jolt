@@ -33,7 +33,8 @@
 }
 
 .PokemonDescription {
-  font-size: 25px;
+  font-family: 'PokeFont';
+  font-size: 20px;
   width: calc(var(--pokemon-box-width) - 60);
   padding: 20px;
 }

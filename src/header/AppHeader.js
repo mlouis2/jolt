@@ -8,7 +8,7 @@ const AppHeader = () => (
     <div className="TitleBar" style={{}}>
       <a href="/" className="TitleLink">
         <div className="Title">
-          JOLT
+          JOLT&nbsp;
         </div>
         <img className="PokeBall" src={pokeball} alt="pokeball"/>
       </a>

@@ -13,7 +13,6 @@ function ResponsiveCarousel(props) {
     const [filteredList, setFilteredList] = useState([]);
     const [search, setSearch] = useState({input: ''});
     const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
-    const [displayDetailedView, setDisplayDetailedView] = useState(true);
 
     const indexRef = useRef();
 
@@ -23,9 +22,7 @@ function ResponsiveCarousel(props) {
     }
 
     function onClick(e) {
-        if (indexRef.current === e) {
-            setDisplayDetailedView(!displayDetailedView);
-        } else {
+        if (indexRef.current !== e) {
             indexRef.current = e;
             setCurrentPokemonIndex(e);
         }
@@ -61,9 +58,7 @@ function ResponsiveCarousel(props) {
             )
         })}
         </Carousel>
-        {displayDetailedView && (
-          <DetailedView currentPokemon={filteredList[currentPokemonIndex]} />
-        )}
+        <DetailedView currentPokemon={filteredList[currentPokemonIndex]} />
         </div>
     );
 

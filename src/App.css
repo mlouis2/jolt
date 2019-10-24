@@ -3,7 +3,22 @@
     src: url('./fonts/PokeFont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
+
+@font-face {
+    font-family: 'PokeThinFont';
+    src: url('./fonts/PokeThinFont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TitleHollow';
+    src: url('./fonts/TitleHollow.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TitleSolid';
+    src: url('./fonts/TitleSolid.ttf') format('truetype');
+}
 
 html, #root, body, #app, #app>div {
   height: 100%;

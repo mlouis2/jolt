@@ -10,6 +10,7 @@
 .PokeBall {
   float: right;
   height: 50px;
+  padding-top: 5px;
   width: 50px;
 }
 
@@ -19,10 +20,11 @@
   border-bottom: 5px solid black;
   color: white;
   display: flex;
-  font-family: 'PokeFont';
+  font-family: 'TitleSolid';
+  text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
   font-size: 50px;
   justify-content: center;
-  padding: 2% 0% 2% 0%;
+  padding: 2% 0% 1% 0%;
   position: absolute;
   text-decoration: none;
   width: 100%;
