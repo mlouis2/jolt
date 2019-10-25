@@ -1,147 +1,681 @@
 {
-     "count": 964,
-     "next": "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20",
-     "previous": null,
-     "results": [
-     {
-          "name":"bulbasaur",
-          "types": ["poison", "grass"],
-          "number": 1,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-          "description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger."
-     },
-     {
-          "name":"ivysaur",
-          "types": ["poison", "grass"],
-          "number": 2,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-          "description": "There is a bud on this Pokémon’s back. To support its weight, Ivysaur’s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it’s a sign that the bud will bloom into a large flower soon."
-     },
-     {
-          "name":"venusaur",
-          "types": ["poison", "grass"],
-          "number": 3,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-          "description": "There is a large flower on Venusaur’s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower’s aroma soothes the emotions of people."
-     },
-     {
-          "name":"charmander",
-          "types": ["fire"],
-          "number": 4,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-          "description": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely."
-     },
-     {
-          "name":"charmeleon",
-          "types": ["fire"],
-          "number": 5,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
-          "description": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color."
-     },
-     {
-          "name":"charizard",
-          "types": ["fire"],
-          "number": 6,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-          "description": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself."
-     },
-     {
-          "name":"squirtle",
-          "types": ["water"],
-          "number": 7,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-          "description": "Squirtle’s shell is not merely used for protection. The shell’s rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds."
-     },
-     {
-          "name":"wartortle",
-          "types": ["water"],
-          "number": 8,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
-          "description": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon’s toughness as a battler."
-     },
-     {
-          "name":"blastoise",
-          "types": ["water"],
-          "number": 9,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
-          "description": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet."
-     },
-     {
-          "name":"caterpie",
-          "types": ["bug"],
-          "number": 10,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
-          "description": "Perhaps because it would like to grow up quickly, it has a voracious appetite, eating a hundred leaves a day."
-     },
-     {
-          "name":"metapod",
-          "types": ["bug"],
-          "number": 11,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
-          "description": "Its shell is filled with a thick liquid. All of the cells throughout its body are being rebuilt in preparation for evolution."
-     },
-     {
-          "name":"butterfree",
-          "types": ["flying", "bug"],
-          "number": 12,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
-          "description": "Its wings are covered in toxic scales. If it finds bird Pokémon going after Caterpie, Butterfree sprinkles its scales on them to drive them off."
-     },
-     {
-          "name":"weedle",
-          "types": ["poison", "bug"],
-          "number": 13,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
-          "description": "Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose)."
-     },
-     {
-          "name":"kakuna",
-          "types": ["poison", "bug"],
-          "number": 14,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
-          "description": "Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch."
-     },
-     {
-          "name":"beedrill",
-          "types": ["poison", "bug"],
-          "number": 15,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
-          "description": "Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm."
-     },
-     {
-          "name":"pidgey",
-          "types": ["flying", "normal"],
-          "number": 16,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
-          "description": "Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings."
-     },
-     {
-          "name":"pidgeotto",
-          "types": ["flying", "normal"],
-          "number": 17,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
-          "description": "Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws."
-     },
-     {
-          "name":"pidgeot",
-          "types": ["flying", "normal"],
-          "number": 18,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
-          "description": "This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon."
-     },
-     {
-          "name":"rattata",
-          "types": ["normal"],
-          "number": 19,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
-          "description": "Its incisors grow continuously throughout its life. If its incisors get too long, this Pokémon becomes unable to eat, and it starves to death."
-     },
-     {
-          "name":"raticate",
-          "types": ["normal"],
-          "number": 20,
-          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
-          "description": "People say that it fled from its enemies by using its small webbed hind feet to swim from island to island in Alola."
-     }
-     ]
+	"length": 20,
+	"1": {
+			"name": "bulbasaur",
+			"types": ["poison", "grass"],
+			"number": 1,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+			"description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "swords-dance",
+					"description": "Raises the user's Attack by two stages.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "cut",
+					"description": "Inflicts regular damage.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"1",
+				"2",
+				"3"
+			]
+		},
+		"2": {
+			"name": "ivysaur",
+			"types": ["poison", "grass"],
+			"number": 2,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+			"description": "There is a bud on this Pokémon’s back. To support its weight, Ivysaur’s legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it’s a sign that the bud will bloom into a large flower soon.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "swords-dance",
+					"description": "Raises the user's Attack by two stages.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "cut",
+					"description": "Inflicts regular damage.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"1",
+				"2",
+				"3"
+			]
+		},
+		"3": {
+			"name": "venusaur",
+			"types": ["poison", "grass"],
+			"number": 3,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+			"description": "There is a large flower on Venusaur’s back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower’s aroma soothes the emotions of people.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "swords-dance",
+					"description": "Raises the user's Attack by two stages.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "cut",
+					"description": "Inflicts regular damage.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"1",
+				"2",
+				"3"
+			]
+		},
+		"4": {
+			"name": "charmander",
+			"types": ["fire"],
+			"number": 4,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+			"description": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "fire-punch",
+					"description": "The target is punched with a fiery fist. This may also leave the target with a burn.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "thunder-punch",
+					"description": "The target is punched with an electrified fist. This may also leave the target with paralysis.",
+					"types": [
+						"electric"
+					]
+				}
+			],
+			"evolution": [
+				"4",
+				"5",
+				"6"
+			]
+		},
+		"5": {
+			"name": "charmeleon",
+			"types": ["fire"],
+			"number": 5,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+			"description": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "fire-punch",
+					"description": "The target is punched with a fiery fist. This may also leave the target with a burn.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "thunder-punch",
+					"description": "The target is punched with an electrified fist. This may also leave the target with paralysis.",
+					"types": [
+						"electric"
+					]
+				}
+			],
+			"evolution": [
+				"4",
+				"5",
+				"6"
+			]
+		},
+		"6": {
+			"name": "charizard",
+			"types": ["fire"],
+			"number": 6,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+			"description": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "fire-punch",
+					"description": "The target is punched with a fiery fist. This may also leave the target with a burn.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "thunder-punch",
+					"description": "The target is punched with an electrified fist. This may also leave the target with paralysis.",
+					"types": [
+						"electric"
+					]
+				}
+			],
+			"evolution": [
+				"4",
+				"5",
+				"6"
+			]
+		},
+		"7": {
+			"name": "squirtle",
+			"types": ["water"],
+			"number": 7,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+			"description": "Squirtle’s shell is not merely used for protection. The shell’s rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "ice-punch",
+					"description": "The target is punched with an icy fist. This may also leave the target frozen.",
+					"types": [
+						"ice"
+					]
+				},
+				{
+					"name": "mega-kick",
+					"description": "The target is attacked by a kick launched with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"7",
+				"8",
+				"9"
+			]
+		},
+		"8": {
+			"name": "wartortle",
+			"types": ["water"],
+			"number": 8,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+			"description": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon’s toughness as a battler.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "ice-punch",
+					"description": "The target is punched with an icy fist. This may also leave the target frozen.",
+					"types": [
+						"ice"
+					]
+				},
+				{
+					"name": "mega-kick",
+					"description": "The target is attacked by a kick launched with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"7",
+				"8",
+				"9"
+			]
+		},
+		"9": {
+			"name": "blastoise",
+			"types": ["water"],
+			"number": 9,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+			"description": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
+			"moves": [{
+					"name": "mega-punch",
+					"description": "The target is slugged by a punch thrown with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "ice-punch",
+					"description": "The target is punched with an icy fist. This may also leave the target frozen.",
+					"types": [
+						"ice"
+					]
+				},
+				{
+					"name": "mega-kick",
+					"description": "The target is attacked by a kick launched with muscle-packed power.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"7",
+				"8",
+				"9"
+			]
+		},
+		"10": {
+			"name": "caterpie",
+			"types": ["bug"],
+			"number": 10,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+			"description": "Perhaps because it would like to grow up quickly, it has a voracious appetite, eating a hundred leaves a day.",
+			"moves": [{
+					"name": "tackle",
+					"description": "A physical attack in which the user charges and slams into the target with its whole body.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "snore",
+					"description": "This attack can be used only if the user is asleep. The harsh noise may also make the target flinch.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"10",
+				"11",
+				"12"
+			]
+		},
+		"11": {
+			"name": "metapod",
+			"types": ["bug"],
+			"number": 11,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+			"description": "Its shell is filled with a thick liquid. All of the cells throughout its body are being rebuilt in preparation for evolution.",
+			"moves": [{
+					"name": "tackle",
+					"description": "A physical attack in which the user charges and slams into the target with its whole body.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "snore",
+					"description": "This attack can be used only if the user is asleep. The harsh noise may also make the target flinch.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"10",
+				"11",
+				"12"
+			]
+		},
+		"12": {
+			"name": "butterfree",
+			"types": ["flying", "bug"],
+			"number": 12,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+			"description": "Its wings are covered in toxic scales. If it finds bird Pokémon going after Caterpie, Butterfree sprinkles its scales on them to drive them off.",
+			"moves": [{
+					"name": "tackle",
+					"description": "A physical attack in which the user charges and slams into the target with its whole body.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "snore",
+					"description": "This attack can be used only if the user is asleep. The harsh noise may also make the target flinch.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"10",
+				"11",
+				"12"
+			]
+		},
+		"13": {
+			"name": "weedle",
+			"types": ["poison", "bug"],
+			"number": 13,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+			"description": "Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose).",
+			"moves": [{
+					"name": "poison-sting",
+					"description": "The user stabs the target with a poisonous stinger. This may also poison the target.",
+					"types": [
+						"poison"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "bug-bite",
+					"description": "The user bites the target. If the target is holding a Berry, the user eats it and gains its effect.",
+					"types": [
+						"bug"
+					]
+				}
+			],
+			"evolution": [
+				"13",
+				"14",
+				"15"
+			]
+		},
+		"14": {
+			"name": "kakuna",
+			"types": ["poison", "bug"],
+			"number": 14,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+			"description": "Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch.",
+			"moves": [{
+					"name": "poison-sting",
+					"description": "The user stabs the target with a poisonous stinger. This may also poison the target.",
+					"types": [
+						"poison"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "bug-bite",
+					"description": "The user bites the target. If the target is holding a Berry, the user eats it and gains its effect.",
+					"types": [
+						"bug"
+					]
+				}
+			],
+			"evolution": [
+				"13",
+				"14",
+				"15"
+			]
+		},
+		"15": {
+			"name": "beedrill",
+			"types": ["poison", "bug"],
+			"number": 15,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+			"description": "Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm.",
+			"moves": [{
+					"name": "poison-sting",
+					"description": "The user stabs the target with a poisonous stinger. This may also poison the target.",
+					"types": [
+						"poison"
+					]
+				},
+				{
+					"name": "string-shot",
+					"description": "The opposing Pokémon are bound with silk blown from the user’s mouth that harshly lowers the Speed stat.",
+					"types": [
+						"bug"
+					]
+				},
+				{
+					"name": "bug-bite",
+					"description": "The user bites the target. If the target is holding a Berry, the user eats it and gains its effect.",
+					"types": [
+						"bug"
+					]
+				}
+			],
+			"evolution": [
+				"13",
+				"14",
+				"15"
+			]
+		},
+		"16": {
+			"name": "pidgey",
+			"types": ["flying", "normal"],
+			"number": 16,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+			"description": "Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "gust",
+					"description": "A gust of wind is whipped up by wings and launched at the target to inflict damage.",
+					"types": [
+						"flying"
+					]
+				},
+				{
+					"name": "wing-attack",
+					"description": "The target is struck with large, imposing wings spread wide to inflict damage.",
+					"types": [
+						"flying"
+					]
+				}
+			],
+			"evolution": [
+				"16",
+				"17",
+				"18"
+			]
+		},
+		"17": {
+			"name": "pidgeotto",
+			"types": ["flying", "normal"],
+			"number": 17,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+			"description": "Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "gust",
+					"description": "A gust of wind is whipped up by wings and launched at the target to inflict damage.",
+					"types": [
+						"flying"
+					]
+				},
+				{
+					"name": "wing-attack",
+					"description": "The target is struck with large, imposing wings spread wide to inflict damage.",
+					"types": [
+						"flying"
+					]
+				}
+			],
+			"evolution": [
+				"16",
+				"17",
+				"18"
+			]
+		},
+		"18": {
+			"name": "pidgeot",
+			"types": ["flying", "normal"],
+			"number": 18,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+			"description": "This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon.",
+			"moves": [{
+					"name": "razor-wind",
+					"description": "Inflicts regular damage. User's critical hit rate is one level higher when using this move. User charges for one turn before attacking. This move cannot be selected by sleep talk.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "gust",
+					"description": "A gust of wind is whipped up by wings and launched at the target to inflict damage.",
+					"types": [
+						"flying"
+					]
+				},
+				{
+					"name": "wing-attack",
+					"description": "The target is struck with large, imposing wings spread wide to inflict damage.",
+					"types": [
+						"flying"
+					]
+				}
+			],
+			"evolution": [
+				"16",
+				"17",
+				"18"
+			]
+		},
+		"19": {
+			"name": "rattata",
+			"types": ["normal"],
+			"number": 19,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+			"description": "Its incisors grow continuously throughout its life. If its incisors get too long, this Pokémon becomes unable to eat, and it starves to death.",
+			"moves": [{
+					"name": "cut",
+					"description": "Inflicts regular damage.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "headbutt",
+					"description": "The user sticks out its head and attacks by charging straight into the target. This may also make the target flinch.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "tackle",
+					"description": "A physical attack in which the user charges and slams into the target with its whole body.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"19",
+				"20"
+			]
+		},
+		"20": {
+			"name": "raticate",
+			"types": ["normal"],
+			"number": 20,
+			"sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+			"description": "People say that it fled from its enemies by using its small webbed hind feet to swim from island to island in Alola.",
+			"moves": [{
+					"name": "cut",
+					"description": "Inflicts regular damage.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "headbutt",
+					"description": "The user sticks out its head and attacks by charging straight into the target. This may also make the target flinch.",
+					"types": [
+						"normal"
+					]
+				},
+				{
+					"name": "tackle",
+					"description": "A physical attack in which the user charges and slams into the target with its whole body.",
+					"types": [
+						"normal"
+					]
+				}
+			],
+			"evolution": [
+				"19",
+				"20"
+			]
+		}
 }

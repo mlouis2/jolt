@@ -9,9 +9,9 @@ import { titleCase, formatNumber, formatTypes } from './carousel/Pokemon'
 function Content() {
   let pokemon = []
   function readData() {
-    data.results.forEach((result) => {
-      pokemon.push(result);
-    })
+     for (let i = 1; i < data.length + 1; i++) {
+       pokemon.push(data[i]);
+     }
   }
 
   readData();
@@ -24,7 +24,8 @@ function Content() {
         number: formatNumber(pokemon.number),
         types: formatTypes(pokemon.types),
         description: pokemon.description,
-        index
+        index,
+        moves: pokemon.moves
       });
   })
   return (
