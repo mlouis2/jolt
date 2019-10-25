@@ -16,6 +16,7 @@ function formatMoveName(moveName) {
 
 function InfoBox(props) {
      const currentPokemon = props.currentPokemon;
+     const pokemonList = props.pokemonList;
      if (currentPokemon !== undefined) {
           const imgAlt = "Image of the Pokémon " + currentPokemon.name + ".";
           return (
@@ -30,6 +31,25 @@ function InfoBox(props) {
                     </div>
                     </div>
                   <div className="Evolution">
+                       <div className="spritesAndArrows">
+                            {currentPokemon.evolution.map((pokemon, index) => {
+                                 console.log("pokemon is " + pokemon);
+                                 return (index === currentPokemon.evolution.length - 1) ?
+                                 (
+                                      <div className="SpriteAndArrow">
+                                           <img src={pokemonList[pokemon - 1].sprite}></img>
+                                      </div>
+                                 )
+                                 : (
+                                      <div className="SpriteAndArrow">
+                                           <img src={pokemonList[pokemon - 1].sprite}></img>
+                                           <div className="Arrow">
+                                                &nbsp;>&nbsp;
+                                           </div>
+                                      </div>
+                                 )
+                            })}
+                       </div>
                   </div>
                   <div className="Moveset">
                     {currentPokemon.moves.map((move, index) => {

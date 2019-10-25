@@ -58,7 +58,7 @@ function ResponsiveCarousel(props) {
             )
         })}
         </Carousel>
-        <DetailedView currentPokemon={filteredList[currentPokemonIndex]} />
+        <DetailedView currentPokemon={filteredList[currentPokemonIndex]} pokemonList={pokemonList} />
         </div>
     );
 

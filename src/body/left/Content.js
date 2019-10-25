@@ -25,7 +25,8 @@ function Content() {
         types: formatTypes(pokemon.types),
         description: pokemon.description,
         index,
-        moves: pokemon.moves
+        moves: pokemon.moves,
+        evolution: pokemon.evolution
       });
   })
   return (

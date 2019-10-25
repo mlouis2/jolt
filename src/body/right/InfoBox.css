@@ -29,9 +29,29 @@
   border-top: 5px solid black;
 }
 
+.Evolution img {
+  background-color: white;
+  border: none;
+  height: 95%;
+}
+
+.spritesAndArrows {
+  display: inline-flex;
+  height: 100%;
+}
+
+.Arrow {
+  align-items: center;
+  display: flex;
+  font-family: 'PokeThinFont';
+  height: 100%;
+  padding: 5px 5px 0px 5px;
+}
+
 .Moveset {
   border-top: 5px solid black;
-  height: calc(85% - 120px);
+  display: inline-block;
+  height: calc(85% - 130px);
   overflow: scroll;
   overflow-y: auto;
   padding: 5px 5px 10px 5px;
