@@ -68,7 +68,10 @@ function ResponsiveCarousel(props) {
 
         useEffect(() => {
             window.addEventListener("keydown", onKeyPressed);
-            document.getElementById("searchBar").focus();
+            const searchBar = document.getElementById("searchBar");
+            if (searchBar) {
+                searchBar.focus();
+            }
         }, [])
 
         function onKeyPressed(event) {

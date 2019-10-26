@@ -52,7 +52,6 @@
   border-top: 5px solid black;
   display: inline-block;
   height: calc(85% - 130px);
-  overflow: scroll;
   overflow-y: auto;
   padding: 5px 5px 10px 5px;
 }
