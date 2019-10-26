@@ -53,7 +53,7 @@ function ResponsiveCarousel(props) {
         {(search.input !== '' ? filteredList : pokemonList).map(p => {
             return (
                 <div key={p.index}>
-                {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)};
+                {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)}
                 </div>
             )
         })}

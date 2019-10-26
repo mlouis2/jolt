@@ -33,7 +33,7 @@ function Content() {
   <div className="Content">
     <ResponsiveCarousel pokemonList={result}/>
   </div>
-  )
+  );
 }
 
 export {
