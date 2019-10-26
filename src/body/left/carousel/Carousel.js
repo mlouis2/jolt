@@ -50,16 +50,20 @@ function ResponsiveCarousel(props) {
         useKeyboardArrows={true}
         width="100%"
         centerMode={true}>
-        {(search.input !== '' ? filteredList : pokemonList).map(p => {
+        {(filteredList && pokemonList) ?
+            (search.input !== '' ? filteredList : pokemonList).map(p => {
             return (
                 <div key={p.index}>
                 {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)}
                 <br/>
                 </div>
             )
-        })}
+        }) : <div/>}
         </Carousel>
-        <DetailedView currentPokemon={filteredList[currentPokemonIndex]} pokemonList={pokemonList} />
+        {filteredList ?
+            <DetailedView currentPokemon={filteredList[currentPokemonIndex]} pokemonList={pokemonList} />
+            : <div/>
+        }
         </div>
     );
 
@@ -108,6 +112,4 @@ function ResponsiveCarousel(props) {
     }
 }
 
-export {
-    ResponsiveCarousel
-}
+export default ResponsiveCarousel

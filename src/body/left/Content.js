@@ -3,7 +3,7 @@ import React from 'react'
 import './Content.css'
 import data from '../fakeData.json'
 
-import { ResponsiveCarousel } from './carousel/Carousel'
+import ResponsiveCarousel from './carousel/Carousel'
 import { titleCase, formatNumber, formatTypes } from './carousel/Pokemon'
 
 function Content() {
