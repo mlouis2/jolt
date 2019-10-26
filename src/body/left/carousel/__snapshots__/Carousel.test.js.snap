@@ -14,6 +14,7 @@ Object {
           >
             <input
               class="SearchBar"
+              data-testid="searchBar"
               id="searchBar"
               placeholder="Search for a Pokémon!"
               type="text"
@@ -66,6 +67,7 @@ Object {
         >
           <input
             class="SearchBar"
+            data-testid="searchBar"
             id="searchBar"
             placeholder="Search for a Pokémon!"
             type="text"
