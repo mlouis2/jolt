@@ -5,5 +5,5 @@ import { render } from "@testing-library/react";
 
 it('renders without crashing', () => {
      const carousel = render(<Carousel />)
-     expect(carousel).toMatchSnapshot();
+     expect(carousel).toMatchSnapshot()
 })
