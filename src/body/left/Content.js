@@ -36,6 +36,4 @@ function Content() {
      );
 }
 
-export {
-     Content
-}
+export default Content
