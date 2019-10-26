@@ -30,8 +30,7 @@ function Pokemon(sprite, name, number, types, description, index) {
         </div>
         </div>
         <div className="PokemonDescription">
-        {name} is {number}, a {types.toLowerCase()} Pokémon. {description} Click to
-        see {name}&apos;s moves and evolution.
+        {name} is {number}, a {types.toLowerCase()} Pokémon. {description}
         </div>
         </div>
     );

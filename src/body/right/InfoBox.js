@@ -33,16 +33,15 @@ function InfoBox(props) {
                   <div className="Evolution">
                        <div className="spritesAndArrows">
                             {currentPokemon.evolution.map((pokemon, index) => {
-                                 console.log("pokemon is " + pokemon);
                                  return (index === currentPokemon.evolution.length - 1) ?
                                  (
-                                      <div className="SpriteAndArrow">
-                                           <img src={pokemonList[pokemon - 1].sprite}></img>
+                                      <div className="SpriteAndArrow" key={index}>
+                                           <img src={pokemonList[pokemon - 1].sprite} alt={"Image of " + pokemonList[pokemon - 1].name}/>
                                       </div>
                                  )
                                  : (
-                                      <div className="SpriteAndArrow">
-                                           <img src={pokemonList[pokemon - 1].sprite}></img>
+                                      <div className="SpriteAndArrow" key={index}>
+                                           <img src={pokemonList[pokemon - 1].sprite} alt={"Image of " + pokemonList[pokemon - 1].name}/>
                                            <div className="Arrow">
                                                 &nbsp;>&nbsp;
                                            </div>

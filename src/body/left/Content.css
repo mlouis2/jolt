@@ -5,6 +5,7 @@
 
 .Pokemon {
   background-color: white;
+  color: black;
   width: var(--pokemon-box-width);
   height: 300px;
   margin: 0 auto;
