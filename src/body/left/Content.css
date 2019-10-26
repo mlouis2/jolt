@@ -8,7 +8,6 @@
   width: var(--pokemon-box-width);
   height: 300px;
   margin: 0 auto;
-  margin-bottom: 10px;
   border: 5px solid black;
 }
 

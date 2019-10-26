@@ -54,6 +54,7 @@ function ResponsiveCarousel(props) {
             return (
                 <div key={p.index}>
                 {Pokemon(p.sprite, p.name, p.number, p.types, p.description, p.index)}
+                <br/>
                 </div>
             )
         })}
