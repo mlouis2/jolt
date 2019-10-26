@@ -1,32 +1,32 @@
 @font-face {
-    font-family: 'PokeFont';
-    src: url('./fonts/PokeFont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+     font-family: 'PokeFont';
+     src: url('./fonts/PokeFont.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
 }
 
 @font-face {
-    font-family: 'PokeThinFont';
-    src: url('./fonts/PokeThinFont.ttf') format('truetype');
+     font-family: 'PokeThinFont';
+     src: url('./fonts/PokeThinFont.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'TitleHollow';
-    src: url('./fonts/TitleHollow.ttf') format('truetype');
+     font-family: 'TitleHollow';
+     src: url('./fonts/TitleHollow.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'TitleSolid';
-    src: url('./fonts/TitleSolid.ttf') format('truetype');
+     font-family: 'TitleSolid';
+     src: url('./fonts/TitleSolid.ttf') format('truetype');
 }
 
 html, #root, body, #app, #app>div {
-  height: 100%;
-  --pokemon-box-width: 90%;
+     height: 100%;
+     --pokemon-box-width: 90%;
 }
 
 .App {
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
+     height: 100%;
+     overflow: hidden;
+     width: 100%;
 }

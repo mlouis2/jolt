@@ -1,44 +1,44 @@
 
 .SearchContainer {
-  background-color: red;
-  height: 120px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  z-index: 1000;
+     background-color: red;
+     height: 120px;
+     position: relative;
+     text-align: center;
+     width: 100%;
+     z-index: 1000;
 }
 
 .SearchBarContainer {
-  background-color: white;
-  border: 5px solid black;
-  width: 400px;
-  font-size: 20px;
-  display: inline-block;
-  margin-top: 40px;
+     background-color: white;
+     border: 5px solid black;
+     width: 400px;
+     font-size: 20px;
+     display: inline-block;
+     margin-top: 40px;
 }
 
 .SearchBar {
-  border: none;
-  float: left;
-  font-size: 20px;
-  height: 40px;
-  outline: none;
-  padding-left: 10px;
-  width: 80%;
+     border: none;
+     float: left;
+     font-size: 20px;
+     height: 40px;
+     outline: none;
+     padding-left: 10px;
+     width: 80%;
 }
 
 .SearchButton {
-  background: none;
-  border: none;
-  float: right;
+     background: none;
+     border: none;
+     float: right;
 }
 
 .SearchButton:disabled {
-  opacity: 0.2;
+     opacity: 0.2;
 }
 
 .SearchIcon {
-  height: 30px;
-  padding-top: 5px;
-  width: 30px;
+     height: 30px;
+     padding-top: 5px;
+     width: 30px;
 }

@@ -1,25 +1,25 @@
 .Carousel {
-  float: left;
-  width: 65%;
+     float: left;
+     width: 65%;
 }
 
 .Carousel img {
-  background-color: black;
-  float: left;
-  width: 100px;
-  height: 100px;
-  border-bottom: 5px solid black;
-  border-right: 5px solid black;
+     background-color: black;
+     float: left;
+     width: 100px;
+     height: 100px;
+     border-bottom: 5px solid black;
+     border-right: 5px solid black;
 }
 
 .Carousel button {
-  visibility: hidden;
+     visibility: hidden;
 }
 
 .Carousel li {
-    list-style-type: none;
+     list-style-type: none;
 }
 
 .Carousel ul {
-  padding: 0px;
+     padding: 0px;
 }
