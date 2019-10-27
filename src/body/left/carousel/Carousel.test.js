@@ -9,10 +9,14 @@ it('renders without crashing', () => {
 })
 
 it('allows for user to search', async () => {
-     const { getByTestId } = render(<Carousel />)
+     const carousel = render(<Carousel />)
+     const getByTestId = carousel.getByTestId
      const searchBar = await waitForElement(() =>
        getByTestId('searchBar'),
      )
      fireEvent.click(searchBar)
-     fireEvent.keyDown(searchBar, { key: 'A', code: 65, charCode: 65 })
+     fireEvent.change(searchBar, {target : {value : 'A'}})
+     expect(carousel).toMatchSnapshot()
+     fireEvent.keyDown(searchBar, { key: 'backspace', code: 8, charCode: 8 })
+     expect(carousel).toMatchSnapshot()
 })

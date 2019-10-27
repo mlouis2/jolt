@@ -80,8 +80,9 @@ function ResponsiveCarousel(props) {
         }, [])
 
         function onKeyPressed(event) {
+            console.log("on key press");
             if (arrowKeyCodes.includes(event.keyCode)){
-                document.getElementById("searchBar").blur();
+                document.getElementById('searchBar').blur();
             }
         }
 
@@ -89,7 +90,7 @@ function ResponsiveCarousel(props) {
             const prev = searchRef.current;
             searchRef.current = e.target.value;
             setSearch({input: e.target.value});
-            if (e.target.value === "") {
+            if (e.target.value === '') {
                 if (prev !== '') {
                     setFilteredList(pokemonList)
                 }
@@ -99,7 +100,9 @@ function ResponsiveCarousel(props) {
         }
 
         function handleSearch() {
-            setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchRef.current.toLowerCase())));
+            if (pokemonList) {
+                setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchRef.current.toLowerCase())));
+            }
             indexRef.current = 0;
         }
 
