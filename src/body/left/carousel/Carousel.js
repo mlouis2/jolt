@@ -80,7 +80,6 @@ function ResponsiveCarousel(props) {
         }, [])
 
         function onKeyPressed(event) {
-            console.log("on key press");
             if (arrowKeyCodes.includes(event.keyCode)){
                 document.getElementById('searchBar').blur();
             }
