@@ -16,7 +16,7 @@ Object {
               class="searchBar"
               data-testid="searchBar"
               id="searchBar"
-              placeholder="Search for a Pokémon!"
+              placeholder="Search by name, type, or number!"
               type="text"
               value="A"
             />
@@ -69,7 +69,7 @@ Object {
             class="searchBar"
             data-testid="searchBar"
             id="searchBar"
-            placeholder="Search for a Pokémon!"
+            placeholder="Search by name, type, or number!"
             type="text"
             value="A"
           />
@@ -179,7 +179,7 @@ Object {
               class="searchBar"
               data-testid="searchBar"
               id="searchBar"
-              placeholder="Search for a Pokémon!"
+              placeholder="Search by name, type, or number!"
               type="text"
               value=""
             />
@@ -232,7 +232,7 @@ Object {
             class="searchBar"
             data-testid="searchBar"
             id="searchBar"
-            placeholder="Search for a Pokémon!"
+            placeholder="Search by name, type, or number!"
             type="text"
             value=""
           />
@@ -339,7 +339,7 @@ exports[`should start with empty search field 1`] = `
         data-testid="searchBar"
         id="searchBar"
         onChange={[Function]}
-        placeholder="Search for a Pokémon!"
+        placeholder="Search by name, type, or number!"
         type="text"
         value=""
       />
