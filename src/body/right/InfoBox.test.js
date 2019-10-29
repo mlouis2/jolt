@@ -9,5 +9,5 @@ it('renders without crashing', () => {
 })
 
 it('can format move names', () => {
-     expect(formatMoveName("razor-wind")).toBe("Razor-Wind");
+     expect(formatMoveName("razor-wind")).toBe("Razor Wind");
 })

@@ -8,8 +8,8 @@ import { formatTypes, titleCase } from '../left/carousel/Pokemon'
 
 function formatMoveName(moveName) {
      moveName = titleCase(moveName);
-     if (moveName.includes("-")) {
-          moveName = moveName.substring(0, moveName.indexOf("-") + 1) + titleCase(moveName.substring(moveName.indexOf("-") + 1));
+     while (moveName.includes("-")) {
+          moveName = moveName.substring(0, moveName.indexOf("-")) + ' '+ titleCase(moveName.substring(moveName.indexOf("-") + 1));
      }
      return moveName;
 }
