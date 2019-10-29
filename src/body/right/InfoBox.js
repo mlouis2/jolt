@@ -18,9 +18,9 @@ function InfoBox(props) {
      const currentPokemon = props.currentPokemon;
      const pokemonList = props.pokemonList;
      if (currentPokemon !== undefined) {
-          const imgAlt = "Image of the Pokémon " + currentPokemon.name + ".";
+          const imgAlt = "Image of the Pokémon " + currentPokemon.index + ".";
           return (
-               <div className="InfoBox">
+               <div className="InfoBox" id={"InfoBox" + currentPokemon.index}>
                     <div className="PokemonHeader">
                          <img src={currentPokemon.sprite} alt={imgAlt}/>
                          <div className="PokemonName">

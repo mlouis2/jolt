@@ -10,6 +10,7 @@ const arrowKeyCodes = [37, 38, 39, 40];
 
 function ResponsiveCarousel(props) {
     const pokemonList = props.pokemonList;
+
     const [filteredList, setFilteredList] = useState([]);
     const [search, setSearch] = useState({input: ''});
     const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
