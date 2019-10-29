@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Carousel from './Carousel'
+import { ResponsiveCarousel, pokemonContainsSearch } from './Carousel'
 import TestRenderer from 'react-test-renderer'
 import ReactTestUtils, { act } from 'react-dom/test-utils'
 import { render, waitForElement, fireEvent, wait } from "@testing-library/react";
@@ -43,18 +43,18 @@ const fakeList = [
 ];
 
 it('renders without crashing', () => {
-     const carousel = render(<Carousel />)
+     const carousel = render(<ResponsiveCarousel />)
      expect(carousel).toMatchSnapshot()
 })
 
 it('should start with empty search field', async () => {
-     const component = TestRenderer.create(<Carousel />)
+     const component = TestRenderer.create(<ResponsiveCarousel />)
      const tree = component.toJSON()
      expect(tree).toMatchSnapshot()
 })
 
 it('allows for user to type in search bar', async () => {
-     const carousel = render(<Carousel />)
+     const carousel = render(<ResponsiveCarousel />)
      const getByTestId = carousel.getByTestId
      const searchBar = await waitForElement(() =>
        getByTestId('searchBar'),
@@ -68,7 +68,7 @@ it('filters pokemon list when user types in search bar', async () => {
      const div = document.createElement('div')
 
      ReactTestUtils.act(() => {
-          ReactDOM.render(<Carousel  pokemonList={fakeList}/>, div)
+          ReactDOM.render(<ResponsiveCarousel  pokemonList={fakeList}/>, div)
      })
 
      const carousel = div.querySelector('.carousel')
@@ -90,7 +90,7 @@ it('resets pokemon list when user types in search bar then erases it', async () 
      const div = document.createElement('div')
 
      ReactTestUtils.act(() => {
-          ReactDOM.render(<Carousel  pokemonList={fakeList}/>, div)
+          ReactDOM.render(<ResponsiveCarousel  pokemonList={fakeList}/>, div)
      })
 
      const carousel = div.querySelector('.carousel')
@@ -117,4 +117,11 @@ it('resets pokemon list when user types in search bar then erases it', async () 
 
      expect(bulbasaur).not.toBeNull();
      expect(slider.children.length).toEqual(2)
+})
+
+it('can tell if a pokemon contains a search', () => {
+     expect(pokemonContainsSearch("bulbasaur", fakeList[0])).toEqual(true);
+     expect(pokemonContainsSearch("ivysaur", fakeList[0])).toEqual(false);
+     expect(pokemonContainsSearch("fire", fakeList[0])).toEqual(false);
+     expect(pokemonContainsSearch("grass", fakeList[0])).toEqual(true);
 })

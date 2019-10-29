@@ -126,4 +126,7 @@ function ResponsiveCarousel(props) {
     }
 }
 
-export default ResponsiveCarousel
+export {
+    ResponsiveCarousel,
+    pokemonContainsSearch
+}

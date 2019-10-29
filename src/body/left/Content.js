@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import './Content.css'
 import data from '../api.js'
 
-import ResponsiveCarousel from './carousel/Carousel'
+import { ResponsiveCarousel } from './carousel/Carousel'
 import { titleCase, formatNumber, formatTypes } from './carousel/Pokemon'
 
 function Content() {
