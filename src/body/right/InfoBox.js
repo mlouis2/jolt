@@ -80,4 +80,7 @@ function InfoBox(props) {
      }
 }
 
-export default InfoBox
+export {
+     InfoBox,
+     formatMoveName
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './DetailedView.css'
-import InfoBox from './InfoBox.js'
+import { InfoBox } from './InfoBox.js'
 
 function DetailedView(props) {
      return (
