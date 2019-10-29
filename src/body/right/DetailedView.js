@@ -5,7 +5,7 @@ import { InfoBox } from './InfoBox.js'
 
 function DetailedView(props) {
      return (
-          <div className="DetailedView">
+          <div className="detailedView">
                <InfoBox
                     currentPokemon={props.currentPokemon}
                     pokemonList={props.pokemonList}/>

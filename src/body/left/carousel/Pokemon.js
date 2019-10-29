@@ -19,17 +19,17 @@ function formatTypes(types) {
 function Pokemon(sprite, name, number, types, description, index) {
     const imgAlt = "Image of the Pokémon " + name + ".";
     return (
-        <div key={index} className="Pokemon" id={name}>
-        <div className="PokemonHeader">
+        <div key={index} className="pokemon" id={name}>
+        <div className="pokemonHeader">
         <img src={sprite} alt={imgAlt}/>
-        <div className="PokemonName">
+        <div className="pokemonName">
         {name}
         </div>
-        <div className="PokemonNumberAndType">
+        <div className="pokemonNumberAndType">
         {number} {types}
         </div>
         </div>
-        <div className="PokemonDescription">
+        <div className="pokemonDescription">
         {name} is {number}, a {types.toLowerCase()} Pokémon. {description}
         </div>
         </div>

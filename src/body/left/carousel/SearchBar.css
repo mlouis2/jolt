@@ -1,5 +1,5 @@
 
-.SearchContainer {
+.searchContainer {
      background-color: red;
      height: 120px;
      position: relative;
@@ -8,7 +8,7 @@
      z-index: 1000;
 }
 
-.SearchBarContainer {
+.searchBarContainer {
      background-color: white;
      border: 5px solid black;
      width: 400px;
@@ -17,7 +17,7 @@
      margin-top: 40px;
 }
 
-.SearchBar {
+.searchBar {
      border: none;
      float: left;
      font-size: 20px;
@@ -27,17 +27,17 @@
      width: 80%;
 }
 
-.SearchButton {
+.searchButton {
      background: none;
      border: none;
      float: right;
 }
 
-.SearchButton:disabled {
+.searchButton:disabled {
      opacity: 0.2;
 }
 
-.SearchIcon {
+.searchIcon {
      height: 30px;
      padding-top: 5px;
      width: 30px;

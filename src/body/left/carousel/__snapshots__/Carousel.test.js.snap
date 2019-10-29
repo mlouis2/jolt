@@ -7,13 +7,13 @@ Object {
     <div>
       <div>
         <div
-          class="SearchContainer"
+          class="searchContainer"
         >
           <div
-            class="SearchBarContainer"
+            class="searchBarContainer"
           >
             <input
-              class="SearchBar"
+              class="searchBar"
               data-testid="searchBar"
               id="searchBar"
               placeholder="Search for a Pokémon!"
@@ -23,7 +23,7 @@ Object {
           </div>
         </div>
         <div
-          class="Carousel"
+          class="carousel"
         >
           <div
             class="carousel carousel-slider"
@@ -60,13 +60,13 @@ Object {
   "container": <div>
     <div>
       <div
-        class="SearchContainer"
+        class="searchContainer"
       >
         <div
-          class="SearchBarContainer"
+          class="searchBarContainer"
         >
           <input
-            class="SearchBar"
+            class="searchBar"
             data-testid="searchBar"
             id="searchBar"
             placeholder="Search for a Pokémon!"
@@ -76,7 +76,7 @@ Object {
         </div>
       </div>
       <div
-        class="Carousel"
+        class="carousel"
       >
         <div
           class="carousel carousel-slider"
@@ -170,13 +170,13 @@ Object {
     <div>
       <div>
         <div
-          class="SearchContainer"
+          class="searchContainer"
         >
           <div
-            class="SearchBarContainer"
+            class="searchBarContainer"
           >
             <input
-              class="SearchBar"
+              class="searchBar"
               data-testid="searchBar"
               id="searchBar"
               placeholder="Search for a Pokémon!"
@@ -186,7 +186,7 @@ Object {
           </div>
         </div>
         <div
-          class="Carousel"
+          class="carousel"
         >
           <div
             class="carousel carousel-slider"
@@ -223,13 +223,13 @@ Object {
   "container": <div>
     <div>
       <div
-        class="SearchContainer"
+        class="searchContainer"
       >
         <div
-          class="SearchBarContainer"
+          class="searchBarContainer"
         >
           <input
-            class="SearchBar"
+            class="searchBar"
             data-testid="searchBar"
             id="searchBar"
             placeholder="Search for a Pokémon!"
@@ -239,7 +239,7 @@ Object {
         </div>
       </div>
       <div
-        class="Carousel"
+        class="carousel"
       >
         <div
           class="carousel carousel-slider"
@@ -329,13 +329,13 @@ Object {
 exports[`should start with empty search field 1`] = `
 <div>
   <div
-    className="SearchContainer"
+    className="searchContainer"
   >
     <div
-      className="SearchBarContainer"
+      className="searchBarContainer"
     >
       <input
-        className="SearchBar"
+        className="searchBar"
         data-testid="searchBar"
         id="searchBar"
         onChange={[Function]}
@@ -346,7 +346,7 @@ exports[`should start with empty search field 1`] = `
     </div>
   </div>
   <div
-    className="Carousel"
+    className="carousel"
   >
     <div
       className="carousel carousel-slider"

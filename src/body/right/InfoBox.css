@@ -1,4 +1,4 @@
-.InfoBox {
+.infoBox {
      background-color: white;
      border: 5px solid black;
      height: 60vh;
@@ -7,29 +7,29 @@
      width: 80%;
 }
 
-.InfoBox img {
+.infoBox img {
      float: left;
      background-color: black;
      border-bottom: 5px solid black;
      border-right: 5px solid black;
 }
 
-.InfoBox .PokemonName {
+.infoBox .pokemonName {
      font-size: 20px;
      width: initial;
 }
 
-.InfoBox .PokemonNumberAndType {
+.infoBox .pokemonNumberAndType {
      font-size: 20px;
      text-align: left;
 }
 
-.Evolution {
+.evolution {
      height: 15%;
      border-top: 5px solid black;
 }
 
-.Evolution img {
+.evolution img {
      background-color: white;
      border: none;
      height: 95%;
@@ -41,7 +41,7 @@
      text-align: center;
 }
 
-.Arrow {
+.arrow {
      align-items: center;
      display: flex;
      font-family: 'PokeThinFont';
@@ -49,7 +49,7 @@
      padding: 5px 5px 0px 5px;
 }
 
-.Moveset {
+.moveset {
      border-top: 5px solid black;
      display: inline-block;
      height: calc(85% - 130px);
@@ -57,26 +57,26 @@
      padding: 5px 5px 10px 5px;
 }
 
-.Move {
+.move {
      padding-top: 5px;
      padding-bottom: 5px;
 }
 
-.MoveName {
+.moveName {
      background-color: red;
      color: white;
      font-family: 'PokeFont';
      font-size: 25px;
 }
 
-.MoveTypes {
+.moveTypes {
      font-family: 'PokeFont';
      font-size: 20px;
      padding-top: 5px;
      padding-bottom: 5px;
 }
 
-.MoveDescription {
+.moveDescription {
      font-family: 'PokeThinFont';
      font-size: 14px;
      line-height: 20px;

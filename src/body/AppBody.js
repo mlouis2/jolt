@@ -6,7 +6,7 @@ import Content from './left/Content'
 
 function AppBody() {
      return (
-          <div className="AppBody">
+          <div className="appBody">
                <Content />
           </div>
      )

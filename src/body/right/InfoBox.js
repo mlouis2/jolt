@@ -20,35 +20,35 @@ function InfoBox(props) {
      if (currentPokemon !== undefined) {
           const imgAlt = "Image of the Pokémon " + currentPokemon.index + ".";
           return (
-               <div className="InfoBox" id={"InfoBox" + currentPokemon.index}>
-                    <div className="PokemonHeader">
+               <div className="infoBox" id={"infoBox" + currentPokemon.index}>
+                    <div className="pokemonHeader">
                          <img src={currentPokemon.sprite} alt={imgAlt}/>
-                         <div className="PokemonName">
+                         <div className="pokemonName">
                               {currentPokemon.name}
                          </div>
-                         <div className="PokemonNumberAndType">
+                         <div className="pokemonNumberAndType">
                               {currentPokemon.number}
                               <br/>
                               {currentPokemon.types}
                          </div>
                     </div>
-                    <div className="Evolution">
+                    <div className="evolution">
                          <div className="spritesAndArrows">
                               {currentPokemon.evolution.map((pokemon, index) => {
                                    return (index === currentPokemon.evolution.length - 1) ?
                                    (
-                                        <div className="SpriteAndArrow" key={index}>
+                                        <div className="spriteAndArrow" key={index}>
                                              <img
                                                   src={pokemonList[pokemon - 1].sprite}
                                                   alt={"Image of " + pokemonList[pokemon - 1].name}/>
                                         </div>
                                    )
                                    : (
-                                        <div className="SpriteAndArrow" key={index}>
+                                        <div className="spriteAndArrow" key={index}>
                                              <img
                                                   src={pokemonList[pokemon - 1].sprite}
                                                   alt={"Image of " + pokemonList[pokemon - 1].name}/>
-                                             <div className="Arrow">
+                                             <div className="arrow">
                                                   &nbsp;>&nbsp;
                                              </div>
                                         </div>
@@ -56,17 +56,17 @@ function InfoBox(props) {
                               })}
                          </div>
                     </div>
-                    <div className="Moveset">
+                    <div className="moveset">
                          {currentPokemon.moves.map((move, index) => {
                               return (
-                                   <div className="Move" key={index}>
-                                        <div className="MoveName">
+                                   <div className="move" key={index}>
+                                        <div className="moveName">
                                              {formatMoveName(move.name)}
                                         </div>
-                                        <div className="MoveTypes">
+                                        <div className="moveTypes">
                                              {formatTypes(move.types)}
                                         </div>
-                                        <div className="MoveDescription">
+                                        <div className="moveDescription">
                                              {move.description}
                                         </div>
                                    </div>

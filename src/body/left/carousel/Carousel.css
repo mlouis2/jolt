@@ -1,9 +1,9 @@
-.Carousel {
+.carousel {
      float: left;
      width: 65%;
 }
 
-.Carousel img {
+.carousel img {
      background-color: black;
      float: left;
      width: 100px;
@@ -12,14 +12,14 @@
      border-right: 5px solid black;
 }
 
-.Carousel button {
+.carousel button {
      visibility: hidden;
 }
 
-.Carousel li {
+.carousel li {
      list-style-type: none;
 }
 
-.Carousel ul {
+.carousel ul {
      padding: 0px;
 }

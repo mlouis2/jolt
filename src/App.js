@@ -7,7 +7,7 @@ import AppBody from './body/AppBody'
 
 const App = () => {
      return (
-          <div className="App">
+          <div className="app">
                <AppHeader />
                <AppBody />
           </div>

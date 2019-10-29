@@ -35,11 +35,11 @@ function ResponsiveCarousel(props) {
 
     return (
         <div>
-        <div className="SearchContainer">
+        <div className="searchContainer">
         <SearchInput />
         </div>
         <Carousel
-        className="Carousel"
+        className="carousel"
         axis="vertical"
         onChange={onFocusChange}
         onClickItem={onClick}
@@ -107,8 +107,8 @@ function ResponsiveCarousel(props) {
         }
 
         return (
-            <div className="SearchBarContainer">
-            <input type="text" data-testid="searchBar" className="SearchBar" id="searchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
+            <div className="searchBarContainer">
+            <input type="text" data-testid="searchBar" className="searchBar" id="searchBar" onChange={handleTextInput} placeholder="Search for a Pokémon!" value={search.input}>
             </input>
             </div>
         )

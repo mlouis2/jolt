@@ -25,7 +25,7 @@ html, #root, body, #app, #app>div {
      --pokemon-box-width: 90%;
 }
 
-.App {
+.app {
      height: 100%;
      overflow: hidden;
      width: 100%;

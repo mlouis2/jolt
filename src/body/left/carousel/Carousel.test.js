@@ -71,8 +71,8 @@ it('filters pokemon list when user types in search bar', async () => {
           ReactDOM.render(<Carousel  pokemonList={fakeList}/>, div)
      })
 
-     const carousel = div.querySelector('.Carousel')
-     const searchBar = div.querySelector('.SearchBar')
+     const carousel = div.querySelector('.carousel')
+     const searchBar = div.querySelector('.searchBar')
 
      ReactTestUtils.act(() => {
           searchBar.value = 'Bulbasaur'
@@ -93,8 +93,8 @@ it('resets pokemon list when user types in search bar then erases it', async () 
           ReactDOM.render(<Carousel  pokemonList={fakeList}/>, div)
      })
 
-     const carousel = div.querySelector('.Carousel')
-     const searchBar = div.querySelector('.SearchBar')
+     const carousel = div.querySelector('.carousel')
+     const searchBar = div.querySelector('.searchBar')
 
      ReactTestUtils.act(() => {
           searchBar.value = 'Bulbasaur'

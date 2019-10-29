@@ -6,23 +6,23 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="AppHeader"
+        class="appHeader"
       >
         <div
-          class="TitleBar"
+          class="titleBar"
         >
           <a
-            class="TitleLink"
+            class="titleLink"
             href="/"
           >
             <div
-              class="Title"
+              class="title"
             >
               JOLT 
             </div>
             <img
               alt="pokeball"
-              class="PokeBall"
+              class="pokeBall"
               src="pokeball.png"
             />
           </a>
@@ -32,23 +32,23 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="AppHeader"
+      class="appHeader"
     >
       <div
-        class="TitleBar"
+        class="titleBar"
       >
         <a
-          class="TitleLink"
+          class="titleLink"
           href="/"
         >
           <div
-            class="Title"
+            class="title"
           >
             JOLT 
           </div>
           <img
             alt="pokeball"
-            class="PokeBall"
+            class="pokeBall"
             src="pokeball.png"
           />
         </a>

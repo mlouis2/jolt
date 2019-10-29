@@ -2,23 +2,23 @@
 
 exports[`can create a pokemon 1`] = `
 <div
-  className="Pokemon"
+  className="pokemon"
   id="Maddiemon"
 >
   <div
-    className="PokemonHeader"
+    className="pokemonHeader"
   >
     <img
       alt="Image of the Pokémon Maddiemon."
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
     />
     <div
-      className="PokemonName"
+      className="pokemonName"
     >
       Maddiemon
     </div>
     <div
-      className="PokemonNumberAndType"
+      className="pokemonNumberAndType"
     >
       1
        
@@ -26,7 +26,7 @@ exports[`can create a pokemon 1`] = `
     </div>
   </div>
   <div
-    className="PokemonDescription"
+    className="pokemonDescription"
   >
     Maddiemon
      is 

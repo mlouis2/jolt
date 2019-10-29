@@ -4,13 +4,13 @@ import './AppHeader.css'
 import pokeball from '../images/pokeball.png';
 
 const AppHeader = () => (
-     <div className="AppHeader">
-          <div className="TitleBar" style={{}}>
-               <a href="/" className="TitleLink">
-                    <div className="Title">
+     <div className="appHeader">
+          <div className="titleBar" style={{}}>
+               <a href="/" className="titleLink">
+                    <div className="title">
                          JOLT&nbsp;
                     </div>
-                    <img className="PokeBall"
+                    <img className="pokeBall"
                          src={pokeball}
                          alt="pokeball"/>
                </a>

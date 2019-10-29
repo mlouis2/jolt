@@ -1,9 +1,9 @@
-.Content {
+.content {
      background-color: red;
      width: 100%;
 }
 
-.Pokemon {
+.pokemon {
      background-color: white;
      width: var(--pokemon-box-width);
      height: 300px;
@@ -11,12 +11,12 @@
      border: 5px solid black;
 }
 
-.PokemonHeader {
+.pokemonHeader {
      font-family: 'PokeFont';
      height: 100px;
 }
 
-.PokemonName {
+.pokemonName {
      width: calc(var(--pokemon-box-width) / 1.5);
      font-size: 40px;
      float: left;
@@ -24,7 +24,7 @@
      padding-top: 10px;
 }
 
-.PokemonNumberAndType {
+.pokemonNumberAndType {
      width: calc(var(--pokemon-box-width) / 1.5);
      font-size: 30px;
      float: left;
@@ -32,7 +32,7 @@
      padding-left: 10px;
 }
 
-.PokemonDescription {
+.pokemonDescription {
      font-family: 'PokeThinFont';
      font-size: 20px;
      line-height: 30px;
