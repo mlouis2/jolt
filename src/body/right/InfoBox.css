@@ -38,6 +38,7 @@
 .spritesAndArrows {
      display: inline-flex;
      height: 100%;
+     text-align: center;
 }
 
 .Arrow {

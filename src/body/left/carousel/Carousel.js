@@ -6,7 +6,7 @@ import DetailedView from '../../right/DetailedView'
 import './Carousel.css'
 import './SearchBar.css'
 
-const arrowKeyCodes = [37, 38, 39, 40];
+const verticalArrowKeyCodes = [37, 39];
 
 function ResponsiveCarousel(props) {
     const pokemonList = props.pokemonList;
@@ -81,7 +81,7 @@ function ResponsiveCarousel(props) {
         }, [])
 
         function onKeyPressed(event) {
-            if (arrowKeyCodes.includes(event.keyCode)){
+            if (verticalArrowKeyCodes.includes(event.keyCode)){
                 document.getElementById('searchBar').blur();
             }
         }
