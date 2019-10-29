@@ -8,6 +8,15 @@ import './SearchBar.css'
 
 const verticalArrowKeyCodes = [37, 39];
 
+function pokemonContainsSearch(search, pokemon) {
+    const lowerCaseName = pokemon.name.toLowerCase();
+    const lowerCaseTypes = pokemon.types.toLowerCase();
+    const lowerCaseSearch = search.toLowerCase();
+    return lowerCaseName.includes(lowerCaseSearch)
+    || lowerCaseTypes.includes(lowerCaseSearch)
+    || pokemon.number.toString().includes(search);
+}
+
 function ResponsiveCarousel(props) {
     const pokemonList = props.pokemonList;
 
@@ -101,7 +110,9 @@ function ResponsiveCarousel(props) {
 
         function handleSearch() {
             if (pokemonList) {
-                setFilteredList(pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchRef.current.toLowerCase())));
+                setFilteredList(pokemonList.filter((pokemon) => {
+                    return pokemonContainsSearch(searchRef.current, pokemon);
+                }));
             }
             indexRef.current = 0;
         }
