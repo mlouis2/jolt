@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`can create a pokemon 1`] = `
+<div
+  className="Pokemon"
+  id="Maddiemon"
+>
+  <div
+    className="PokemonHeader"
+  >
+    <img
+      alt="Image of the Pokémon Maddiemon."
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    />
+    <div
+      className="PokemonName"
+    >
+      Maddiemon
+    </div>
+    <div
+      className="PokemonNumberAndType"
+    >
+      1
+       
+      Grass/Fighting
+    </div>
+  </div>
+  <div
+    className="PokemonDescription"
+  >
+    Maddiemon
+     is 
+    1
+    , a 
+    grass/fighting
+     Pokémon. 
+    Maddiemon is a grass Pokemon.
+  </div>
+</div>
+`;
+
 exports[`renders without crashing 1`] = `
 Object {
   "asFragment": [Function],
