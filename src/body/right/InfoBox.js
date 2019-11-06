@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './InfoBox.css'
 import '../left/carousel/Carousel.css'
@@ -14,61 +14,14 @@ function formatMoveName(moveName) {
      return moveName;
 }
 
-function getSpritesAndArrows(currentPokemon, pokemonList) {
-     if (!currentPokemon.evolution) {
-          return (
-               <div>?</div>
-          )
-     }
-     currentPokemon.evolution.map((pokemon, index) => {
-          return (index === currentPokemon.evolution.length - 1) ?
-          (
-               <div className="spriteAndArrow" key={index}>
-                    <img
-                         src={pokemonList[pokemon - 1].sprite}
-                         alt={"Image of " + pokemonList[pokemon - 1].name}/>
-               </div>
-          )
-          : (
-               <div className="spriteAndArrow" key={index}>
-                    <img
-                         src={pokemonList[pokemon - 1].sprite}
-                         alt={"Image of " + pokemonList[pokemon - 1].name}/>
-                    <div className="arrow">
-                         &nbsp;>&nbsp;
-                    </div>
-               </div>
-          )
-     })
-}
-
-function getMoves(currentPokemon, pokemonList) {
-     if (!currentPokemon.moves) {
-          return (
-               <div>?</div>
-          )
-     }
-     currentPokemon.moves.map((move, index) => {
-          return (
-               <div className="move" key={index}>
-                    <div className="moveName">
-                         {formatMoveName(move.name)}
-                    </div>
-                    <div className="moveTypes">
-                         {formatTypes(move.types)}
-                    </div>
-                    <div className="moveDescription">
-                         {move.description}
-                    </div>
-               </div>
-          )
-     })
-}
-
 function InfoBox(props) {
-     const currentPokemon = props.currentPokemon;
-     const pokemonList = props.pokemonList;
+     const api = props.api
+     const currentPokemon = props.currentPokemon
+     const pokemonList = props.pokemonList
+
      if (currentPokemon !== undefined) {
+          currentPokemon.moves = props.moves
+          currentPokemon.evolution = props.evolution
           const imgAlt = "Image of the Pokémon " + currentPokemon.index + ".";
           return (
                <div className="infoBox" id={"infoBox" + currentPokemon.index}>
@@ -85,11 +38,44 @@ function InfoBox(props) {
                     </div>
                     <div className="evolution">
                          <div className="spritesAndArrows">
-                              {getSpritesAndArrows(currentPokemon, pokemonList)}
+                              {currentPokemon.evolution.map((pokemon, index) => {
+                                   return (index === currentPokemon.evolution.length - 1) ?
+                                   (
+                                        <div className="spriteAndArrow" key={index}>
+                                             <img
+                                                  src={pokemonList[pokemon - 1].sprite}
+                                                  alt={"Image of " + pokemonList[pokemon - 1].name}/>
+                                        </div>
+                                   )
+                                   : (
+                                        <div className="spriteAndArrow" key={index}>
+                                             <img
+                                                  src={pokemonList[pokemon - 1].sprite}
+                                                  alt={"Image of " + pokemonList[pokemon - 1].name}/>
+                                             <div className="arrow">
+                                                  &nbsp;>&nbsp;
+                                             </div>
+                                        </div>
+                                   )
+                              })}
                          </div>
                     </div>
                     <div className="moveset">
-                         {getMoves(currentPokemon, pokemonList)}
+                         {currentPokemon.moves.map((move, index) => {
+                              return (
+                                   <div className="move" key={index}>
+                                        <div className="moveName">
+                                             {formatMoveName(move.name)}
+                                        </div>
+                                        <div className="moveTypes">
+                                             {formatTypes(move.types)}
+                                        </div>
+                                        <div className="moveDescription">
+                                             {move.description}
+                                        </div>
+                                   </div>
+                              )
+                         })}
                     </div>
                </div>
           )

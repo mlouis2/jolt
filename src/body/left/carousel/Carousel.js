@@ -9,37 +9,38 @@ import './SearchBar.css'
 const verticalArrowKeyCodes = [37, 39];
 
 function pokemonContainsSearch(search, pokemon) {
-    const lowerCaseName = pokemon.name.toLowerCase();
-    const lowerCaseTypes = pokemon.types.toLowerCase();
-    const lowerCaseSearch = search.toLowerCase();
+    const lowerCaseName = pokemon.name.toLowerCase()
+    const lowerCaseTypes = pokemon.types.toLowerCase()
+    const lowerCaseSearch = search.toLowerCase()
     return lowerCaseName.includes(lowerCaseSearch)
     || lowerCaseTypes.includes(lowerCaseSearch)
-    || pokemon.number.toString().includes(search);
+    || pokemon.number.toString().includes(search)
 }
 
 function ResponsiveCarousel(props) {
-    const pokemonList = props.pokemonList;
+    const pokemonList = props.pokemonList
+    const api = props.api
 
-    const [filteredList, setFilteredList] = useState([]);
-    const [search, setSearch] = useState({input: ''});
-    const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
+    const [filteredList, setFilteredList] = useState([])
+    const [search, setSearch] = useState({input: ''})
+    const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0)
 
     const indexRef = useRef();
 
     function onFocusChange(e) {
-        indexRef.current = e;
-        setCurrentPokemonIndex(e);
+        indexRef.current = e
+        setCurrentPokemonIndex(e)
     }
 
     function onClick(e) {
         if (indexRef.current !== e) {
-            indexRef.current = e;
-            setCurrentPokemonIndex(e);
+            indexRef.current = e
+            setCurrentPokemonIndex(e)
         }
     }
 
     useEffect(() => {
-        setFilteredList(pokemonList);
+        setFilteredList(pokemonList)
     }, [pokemonList])
 
     return (
@@ -71,7 +72,7 @@ function ResponsiveCarousel(props) {
         }) : <div/>}
         </Carousel>
         {filteredList ?
-            <DetailedView currentPokemon={filteredList[currentPokemonIndex]} pokemonList={pokemonList} />
+            <DetailedView currentPokemon={filteredList[currentPokemonIndex]} pokemonList={pokemonList} api={api} />
             : <div/>
         }
         </div>
@@ -82,23 +83,23 @@ function ResponsiveCarousel(props) {
         const searchRef = useRef();
 
         useEffect(() => {
-            window.addEventListener("keydown", onKeyPressed);
-            const searchBar = document.getElementById("searchBar");
+            window.addEventListener("keydown", onKeyPressed)
+            const searchBar = document.getElementById("searchBar")
             if (searchBar) {
-                searchBar.focus();
+                searchBar.focus()
             }
         }, [])
 
         function onKeyPressed(event) {
             if (verticalArrowKeyCodes.includes(event.keyCode)){
-                document.getElementById('searchBar').blur();
+                document.getElementById('searchBar').blur()
             }
         }
 
         function handleTextInput(e) {
-            const prev = searchRef.current;
-            searchRef.current = e.target.value;
-            setSearch({input: e.target.value});
+            const prev = searchRef.current
+            searchRef.current = e.target.value
+            setSearch({input: e.target.value})
             if (e.target.value === '') {
                 if (prev !== '') {
                     setFilteredList(pokemonList)
@@ -111,7 +112,7 @@ function ResponsiveCarousel(props) {
         function handleSearch() {
             if (pokemonList) {
                 setFilteredList(pokemonList.filter((pokemon) => {
-                    return pokemonContainsSearch(searchRef.current, pokemon);
+                    return pokemonContainsSearch(searchRef.current, pokemon)
                 }));
             }
             indexRef.current = 0;

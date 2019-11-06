@@ -37,10 +37,11 @@ async function getPokemonMoves(index) {
 }
 
 async function getPokemonEvolution(index) {
+     console.log("index is " + index)
      return Promise.resolve(data[index.toString()].evolution)
 }
 
-export {
+export default {
      getNumPokemon,
      getPokemon,
      getPokemonName,

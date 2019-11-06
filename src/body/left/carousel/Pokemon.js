@@ -16,6 +16,8 @@ function formatTypes(types) {
     return types.map(s => titleCase(s)).join('/');
 }
 
+// Try Pokemon(pokemonApi, index)
+// pokemonApi has the getter functions and caches things.
 function Pokemon(sprite = "https://images-na.ssl-images-amazon.com/images/I/51lh93vBeRL._SY679_.jpg", name = "Pokemon", number = "?", types = "?", description = "...", index) {
     const imgAlt = "Image of the Pokémon " + name + ".";
     return (

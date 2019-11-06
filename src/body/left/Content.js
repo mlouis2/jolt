@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 import './Content.css'
-import { getNumPokemon, getPokemon, getPokemonName, getPokemonTypes, getPokemonNumber, getPokemonSprite, getPokemonDescription, getPokemonMoves, getPokemonEvolution } from '../fakeapi.js'
 
 import { ResponsiveCarousel } from './carousel/Carousel'
 import { titleCase, formatNumber, formatTypes } from './carousel/Pokemon'
 
-function Content() {
+function Content(props) {
+
+     const api = props.api
 
      const [result, setResult] = useState([]);
 
@@ -21,7 +22,7 @@ function Content() {
 
      async function readData() {
           const pokemon = []
-          Promise.resolve(getNumPokemon()).then((numPokemon) => {
+          Promise.resolve(api.getNumPokemon()).then((numPokemon) => {
                setResult()
                for (let index = 0; index < numPokemon; index++) {
                     pokemon.push({index})
@@ -30,32 +31,24 @@ function Content() {
                const processedPokemon = pokemon
                for (let index = 0; index < numPokemon; index++) {
                     const num = index + 1
-                    Promise.resolve(getPokemonSprite(num)).then((sprite) => {
+                    Promise.resolve(api.getPokemonSprite(num)).then((sprite) => {
                          pokemon[index].sprite = sprite
                          wrappedSetResult(pokemon);
                     })
-                    Promise.resolve(getPokemonName(num)).then((name) => {
+                    Promise.resolve(api.getPokemonName(num)).then((name) => {
                          pokemon[index].name = titleCase(name)
                          wrappedSetResult(pokemon);
                     })
-                    Promise.resolve(getPokemonNumber(num)).then((number) => {
+                    Promise.resolve(api.getPokemonNumber(num)).then((number) => {
                          pokemon[index].number = formatNumber(number)
                          wrappedSetResult(pokemon);
                     })
-                    Promise.resolve(getPokemonTypes(num)).then((types) => {
+                    Promise.resolve(api.getPokemonTypes(num)).then((types) => {
                          pokemon[index].types = formatTypes(types)
                          wrappedSetResult(pokemon);
                     })
-                    Promise.resolve(getPokemonDescription(num)).then((description) => {
+                    Promise.resolve(api.getPokemonDescription(num)).then((description) => {
                          pokemon[index].description = description
-                         wrappedSetResult(pokemon);
-                    })
-                    Promise.resolve(getPokemonMoves(num)).then((moves) => {
-                         pokemon[index].moves = moves
-                         wrappedSetResult(pokemon);
-                    })
-                    Promise.resolve(getPokemonEvolution(num)).then((evolution) => {
-                         pokemon[index].evolution = evolution
                          wrappedSetResult(pokemon);
                     })
                }
@@ -65,7 +58,7 @@ function Content() {
 
      return (
           <div className="content">
-               <ResponsiveCarousel pokemonList={result}/>
+               <ResponsiveCarousel pokemonList={result} api={api}/>
           </div>
      )
 
