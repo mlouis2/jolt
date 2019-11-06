@@ -16,7 +16,7 @@ function formatTypes(types) {
     return types.map(s => titleCase(s)).join('/');
 }
 
-function Pokemon(sprite, name, number, types, description, index) {
+function Pokemon(sprite = "https://images-na.ssl-images-amazon.com/images/I/51lh93vBeRL._SY679_.jpg", name = "Pokemon", number = "?", types = "?", description = "...", index) {
     const imgAlt = "Image of the Pokémon " + name + ".";
     return (
         <div key={index} className="pokemon" id={name}>

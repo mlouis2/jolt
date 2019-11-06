@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import './Content.css'
-import data from '../api.js'
+import { getNumPokemon, getPokemon, getPokemonName, getPokemonTypes, getPokemonNumber, getPokemonSprite, getPokemonDescription, getPokemonMoves, getPokemonEvolution } from '../fakeapi.js'
 
 import { ResponsiveCarousel } from './carousel/Carousel'
 import { titleCase, formatNumber, formatTypes } from './carousel/Pokemon'
@@ -16,26 +16,40 @@ function Content() {
      }, [])
 
      async function readData() {
-          const realData = await data
-          let pokemon = [];
-          for (let i = 1; i < realData.length + 1; i++) {
-               pokemon.push(realData[i]);
-          }
-          let processedPokemon = []
-          pokemon.forEach((pokemon, index) => {
-               processedPokemon.push({
-                    sprite: pokemon.sprite,
-                    name: titleCase(pokemon.name),
-                    number: formatNumber(pokemon.number),
-                    types: formatTypes(pokemon.types),
-                    description: pokemon.description,
-                    index,
-                    moves: pokemon.moves,
-                    evolution: pokemon.evolution
-               });
+          const pokemon = []
+          Promise.resolve(getNumPokemon()).then((numPokemon) => {
+               setResult()
+               for (let index = 0; index < numPokemon; index++) {
+                    pokemon.push({index})
+               }
+               setResult(pokemon)
+               for (let index = 0; index < numPokemon; index++) {
+                    const num = index + 1
+                    Promise.resolve(getPokemonSprite(num)).then((sprite) => {
+                         pokemon[index].sprite = sprite
+                    })
+                    Promise.resolve(getPokemonName(num)).then((name) => {
+                         pokemon[index].name = titleCase(name)
+                    })
+                    Promise.resolve(getPokemonNumber(num)).then((number) => {
+                         pokemon[index].number = number
+                    })
+                    Promise.resolve(getPokemonTypes(num)).then((types) => {
+                         pokemon[index].types = types
+                    })
+                    Promise.resolve(getPokemonDescription(num)).then((description) => {
+                         pokemon[index].description = description
+                    })
+                    Promise.resolve(getPokemonMoves(num)).then((moves) => {
+                         pokemon[index].moves = moves
+                    })
+                    Promise.resolve(getPokemonEvolution(num)).then((evolution) => {
+                         pokemon[index].evolution = evolution
+                    })
+               }
+               setResult(pokemon);
+               setDataLoaded(true);
           })
-          setResult(processedPokemon);
-          setDataLoaded(true);
      }
 
      if (!dataLoaded) {
