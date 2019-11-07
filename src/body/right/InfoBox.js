@@ -22,7 +22,6 @@ function InfoBox(props) {
   const pokemonList = props.pokemonList;
 
   if (currentPokemon !== undefined) {
-    console.log("rendering the info box ");
     currentPokemon.moves = props.moves;
     currentPokemon.evolution = props.evolution;
     const imgAlt = "Image of the Pokémon " + currentPokemon.index + ".";
@@ -38,38 +37,41 @@ function InfoBox(props) {
           </div>
         </div>
         <div className="evolution">
-          <div className="spritesAndArrows">
-            {currentPokemon.evolution.map((pokemon, index) => {
-              return index === currentPokemon.evolution.length - 1 ? (
-                <div className="spriteAndArrow" key={index}>
-                  <img
-                    src={pokemonList[index].sprite}
-                    alt={"Image of " + pokemonList[index].name}
-                  />
-                </div>
-              ) : (
-                <div className="spriteAndArrow" key={index}>
-                  <img
-                    src={pokemonList[index].sprite}
-                    alt={"Image of " + pokemonList[index].name}
-                  />
-                  <div className="arrow">&nbsp;>&nbsp;</div>
+          {currentPokemon.evolution && (
+            <div className="spritesAndArrows">
+              {currentPokemon.evolution.map((pokemonIndex, index) => {
+                console.log(
+                  "current pokemon evolution",
+                  currentPokemon.evolution
+                );
+                return (
+                  <div className="spriteAndArrow" key={index}>
+                    <img
+                      src={pokemonList[pokemonIndex - 1].sprite}
+                      alt={"Image of " + pokemonList[pokemonIndex - 1].name}
+                    />
+                    {index !== currentPokemon.evolution.length - 1 && (
+                      <div className="arrow">&nbsp;>&nbsp;</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+        {currentPokemon.moves && (
+          <div className="moveset">
+            {currentPokemon.moves.map((move, index) => {
+              return (
+                <div className="move" key={index}>
+                  <div className="moveName">{formatMoveName(move.name)}</div>
+                  <div className="moveTypes">{titleCase(move.type)}</div>
+                  <div className="moveDescription">{move.description}</div>
                 </div>
               );
             })}
           </div>
-        </div>
-        <div className="moveset">
-          {currentPokemon.moves.map((move, index) => {
-            return (
-              <div className="move" key={index}>
-                <div className="moveName">{formatMoveName(move.name)}</div>
-                <div className="moveTypes">{titleCase(move.types)}</div>
-                <div className="moveDescription">{move.description}</div>
-              </div>
-            );
-          })}
-        </div>
+        )}
       </div>
     );
   } else {

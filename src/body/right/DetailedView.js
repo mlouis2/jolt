@@ -10,6 +10,8 @@ function DetailedView(props) {
   const api = props.api;
 
   function addEvolutionAndMoves() {
+    setEvolution([]);
+    setMoves([]);
     if (props.currentPokemon && api) {
       api.getPokemonMoves(props.currentPokemon.index).then(result => {
         setMoves(result);
@@ -20,25 +22,20 @@ function DetailedView(props) {
     }
   }
 
-  useEffect(addEvolutionAndMoves, [props.currentPokemon]);
+  useEffect(() => {
+    addEvolutionAndMoves();
+  }, [props.currentPokemon]);
 
-  if (moves.length > 0 && evolution.length > 0) {
-    console.log("before rendering detailed view");
-    console.log("moves is ", moves);
-    console.log("evolution is ", evolution);
-    return (
-      <div className="detailedView">
-        <InfoBox
-          currentPokemon={props.currentPokemon}
-          pokemonList={props.pokemonList}
-          evolution={evolution}
-          moves={moves}
-        />
-      </div>
-    );
-  } else {
-    return <div />;
-  }
+  return (
+    <div className="detailedView">
+      <InfoBox
+        currentPokemon={props.currentPokemon}
+        pokemonList={props.pokemonList}
+        evolution={evolution}
+        moves={moves}
+      />
+    </div>
+  );
 }
 
 export default DetailedView;

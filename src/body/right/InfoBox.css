@@ -1,83 +1,84 @@
 .infoBox {
-     background-color: white;
-     border: 5px solid black;
-     height: 60vh;
-     margin: 0px 0px 50px 0px;
-     text-align: -webkit-center;
-     width: 80%;
+  background-color: white;
+  border: 5px solid black;
+  height: 60vh;
+  margin: 0px 0px 50px 0px;
+  text-align: -webkit-center;
+  width: 80%;
 }
 
 .infoBox img {
-     float: left;
-     background-color: black;
-     border-bottom: 5px solid black;
-     border-right: 5px solid black;
+  float: left;
+  background-color: black;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
 }
 
 .infoBox .pokemonName {
-     font-size: 20px;
-     width: initial;
+  font-size: 20px;
+  width: initial;
 }
 
 .infoBox .pokemonNumberAndType {
-     font-size: 20px;
-     text-align: left;
+  font-size: 20px;
+  text-align: left;
 }
 
 .evolution {
-     height: 15%;
-     border-top: 5px solid black;
+  height: 15%;
+  border-top: 5px solid black;
 }
 
 .evolution img {
-     background-color: white;
-     border: none;
-     height: 95%;
+  background-color: white;
+  border: none;
+  height: 95%;
 }
 
 .spritesAndArrows {
-     display: inline-flex;
-     height: 100%;
-     text-align: center;
+  display: inline-flex;
+  height: 100%;
+  text-align: center;
 }
 
 .arrow {
-     align-items: center;
-     display: flex;
-     font-family: 'PokeThinFont';
-     height: 100%;
-     padding: 5px 5px 0px 5px;
+  align-items: center;
+  display: flex;
+  font-family: "PokeThinFont";
+  height: 100%;
+  padding: 5px 5px 0px 5px;
 }
 
 .moveset {
-     border-top: 5px solid black;
-     display: inline-block;
-     height: calc(85% - 130px);
-     overflow-y: auto;
-     padding: 5px 5px 10px 5px;
+  border-top: 5px solid black;
+  display: inline-block;
+  height: calc(85% - 130px);
+  overflow-y: auto;
+  padding: 5px 5px 10px 5px;
+  width: 98%;
 }
 
 .move {
-     padding-top: 5px;
-     padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .moveName {
-     background-color: red;
-     color: white;
-     font-family: 'PokeFont';
-     font-size: 25px;
+  background-color: red;
+  color: white;
+  font-family: "PokeFont";
+  font-size: 25px;
 }
 
 .moveTypes {
-     font-family: 'PokeFont';
-     font-size: 20px;
-     padding-top: 5px;
-     padding-bottom: 5px;
+  font-family: "PokeFont";
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .moveDescription {
-     font-family: 'PokeThinFont';
-     font-size: 14px;
-     line-height: 20px;
+  font-family: "PokeThinFont";
+  font-size: 14px;
+  line-height: 20px;
 }
