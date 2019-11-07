@@ -12,12 +12,12 @@ function DetailedView(props) {
 
      function addEvolutionAndMoves() {
           if (props.currentPokemon && api) {
-               Promise.resolve(api.getPokemonMoves(props.currentPokemon.index + 1)).then((movesResponse) => {
-                    setMoves(movesResponse)
+               Promise.resolve(api.getPokemonMoves(props.currentPokemon.index + 1)).then((result) => {
+                    setMoves(result)
                })
 
-               Promise.resolve(api.getPokemonEvolution(props.currentPokemon.index + 1)).then((evolutionResponse) => {
-                    setEvolution(evolutionResponse)
+               Promise.resolve(api.getPokemonEvolution(props.currentPokemon.index + 1)).then((result) => {
+                    setEvolution(result)
                })
           }
      }

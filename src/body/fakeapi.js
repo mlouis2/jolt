@@ -5,11 +5,7 @@ const apiHost = () => { }
 const data = fakeData
 
 async function getNumPokemon() {
-     return Promise.resolve(data.length)
-}
-
-async function getPokemon(index) {
-     return Promise.resolve(data[index.toString()])
+     return Promise.resolve(data.count)
 }
 
 async function getPokemonName(index) {
@@ -42,7 +38,6 @@ async function getPokemonEvolution(index) {
 
 export default {
      getNumPokemon,
-     getPokemon,
      getPokemonName,
      getPokemonTypes,
      getPokemonNumber,

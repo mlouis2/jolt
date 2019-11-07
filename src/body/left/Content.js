@@ -11,58 +11,64 @@ function Content(props) {
 
      const [result, setResult] = useState([]);
 
-     function wrappedSetResult(result) {
-          const loadedPokemon = result.map((pokemon) => pokemon)
-          setResult(loadedPokemon)
-     }
+     // function wrappedSetResult(result) {
+     //      const loadedPokemon = result.map((pokemon) => pokemon)
+     //      setResult(loadedPokemon)
+     // }
 
      useEffect(() => {
           readData();
      }, [])
 
+
+     // useEffect(() => {
+          // api.getNumPokemon().then((numPokemon) => {
+          //      for (let i = 0; i < 4; i++) {
+          //           api.getPokemonName(i).then((res) => console.log('res', res))
+          //      }
+          // })
+     // })
+
      async function readData() {
           const pokemon = []
-          if (api) {
-               Promise.resolve(api.getNumPokemon()).then((numPokemon) => {
-                    setResult()
-                    for (let index = 0; index < numPokemon; index++) {
-                         pokemon.push({index})
-                    }
-                    setResult(pokemon)
-                    const processedPokemon = pokemon
-                    for (let index = 0; index < numPokemon; index++) {
-                         const num = index + 1
-                         Promise.resolve(api.getPokemonSprite(num)).then((sprite) => {
-                              pokemon[index].sprite = sprite
-                              wrappedSetResult(pokemon);
-                         })
-                         Promise.resolve(api.getPokemonName(num)).then((name) => {
-                              pokemon[index].name = titleCase(name)
-                              wrappedSetResult(pokemon);
-                         })
-                         Promise.resolve(api.getPokemonNumber(num)).then((number) => {
-                              pokemon[index].number = formatNumber(number)
-                              wrappedSetResult(pokemon);
-                         })
-                         Promise.resolve(api.getPokemonTypes(num)).then((types) => {
-                              pokemon[index].types = formatTypes(types)
-                              wrappedSetResult(pokemon);
-                         })
-                         Promise.resolve(api.getPokemonDescription(num)).then((description) => {
-                              pokemon[index].description = description
-                              wrappedSetResult(pokemon);
-                         })
-                    }
-                    setResult(pokemon);
-               })
-          }
+          api.getNumPokemon().then((numPokemon) => {
+               for (let index = 0; index < numPokemon; index++) {
+                    console.log("getting into the for loop! pushing to pokemon")
+                    pokemon.push({index})
+                    api.getPokemonName(index + 1).then((res) => {
+                         pokemon[index].name = res
+                    })
+                    // Promise.resolve(api.getPokemonSprite(num)).then((sprite) => {
+                    //      pokemon[index].sprite = sprite
+                    // })
+                    // Promise.resolve(api.getPokemonNumber(num)).then((number) => {
+                    //      pokemon[index].number = formatNumber(number)
+                    // })
+                    // Promise.resolve(api.getPokemonTypes(num)).then((types) => {
+                    //      pokemon[index].types = formatTypes(types)
+                    // })
+                    // Promise.resolve(api.getPokemonDescription(num)).then((description) => {
+                    //      pokemon[index].description = description
+                    // })
+               }
+          })
+          console.log('test pokemon', pokemon.join(' '))
+          setResult(pokemon)
      }
 
-     return (
-          <div className="content">
-               <ResponsiveCarousel pokemonList={result} api={api}/>
-          </div>
-     )
+     console.log("result length is", result.length)
+
+     if (result.length > 0) {
+          return (
+               <div className="content">
+                    <ResponsiveCarousel pokemonList={result} api={api}/>
+               </div>
+          )
+     } else {
+          return (
+               <div/>
+          )
+     }
 
 }
 

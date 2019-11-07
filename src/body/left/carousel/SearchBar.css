@@ -1,7 +1,8 @@
 
 .searchContainer {
      background-color: red;
-     height: 120px;
+     border-bottom: 5px solid black;
+     height: 110px;
      position: relative;
      text-align: center;
      width: 100%;

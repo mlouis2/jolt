@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import './InfoBox.css'
 import '../left/carousel/Carousel.css'
@@ -18,11 +18,13 @@ function InfoBox(props) {
      const api = props.api
      const currentPokemon = props.currentPokemon
      const pokemonList = props.pokemonList
+     console.log('initial list', pokemonList)
 
      if (currentPokemon !== undefined) {
           currentPokemon.moves = props.moves
           currentPokemon.evolution = props.evolution
           const imgAlt = "Image of the Pokémon " + currentPokemon.index + ".";
+          console.log("pokemon list is ", pokemonList)
           return (
                <div className="infoBox" id={"infoBox" + currentPokemon.index}>
                     <div className="pokemonHeader">
@@ -39,19 +41,21 @@ function InfoBox(props) {
                     <div className="evolution">
                          <div className="spritesAndArrows">
                               {currentPokemon.evolution.map((pokemon, index) => {
+                                   console.log("index is " + index)
+                                   console.log('pokemonlist[index]', pokemonList)
                                    return (index === currentPokemon.evolution.length - 1) ?
                                    (
                                         <div className="spriteAndArrow" key={index}>
                                              <img
-                                                  src={pokemonList[pokemon - 1].sprite}
-                                                  alt={"Image of " + pokemonList[pokemon - 1].name}/>
+                                                  src={pokemonList[index].sprite}
+                                                  alt={"Image of " + pokemonList[index].name}/>
                                         </div>
                                    )
                                    : (
                                         <div className="spriteAndArrow" key={index}>
                                              <img
-                                                  src={pokemonList[pokemon - 1].sprite}
-                                                  alt={"Image of " + pokemonList[pokemon - 1].name}/>
+                                                  src={pokemonList[index].sprite}
+                                                  alt={"Image of " + pokemonList[index].name}/>
                                              <div className="arrow">
                                                   &nbsp;>&nbsp;
                                              </div>
