@@ -17,7 +17,6 @@ function getDescription(json) {
 
 async function getPokemonInfo(index) {
   if (memoized[index]) {
-    console.log("using memoized info");
     return {
       name: memoized[index].name,
       types: memoized[index].types,
@@ -28,12 +27,10 @@ async function getPokemonInfo(index) {
   const url = `https://pokeapi.co/api/v2/pokemon/${index}`;
   const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${index}`;
   const response = await fetch(url).catch(err => {
-    console.log("we're at least figuring out that the error is happening");
-    alert(err);
+    throw `Error in getting info for Pokemon #${index}`;
   });
   const speciesResponse = await fetch(speciesUrl).catch(err => {
-    console.log("we're at least figuring out that the error is happening");
-    alert(err);
+    throw `Error in getting species for Pokemon #${index}`;
   });
   const responseJson = await response.json();
   const speciesResponseJson = await speciesResponse.json();
@@ -53,22 +50,19 @@ async function getPokemonInfo(index) {
 
 async function getPokemonMoves(index) {
   if (memoized[index].moves) {
-    console.log("using memoized moves");
     return memoized[index].moves;
   }
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${index}`
   ).catch(err => {
-    console.log("we're at least figuring out that the error is happening");
-    alert(err);
+    throw `Error in getting info for Pokemon #${index}`;
   });
   const responseJson = await response.json();
   const moves = [];
   for (let i = 0; i < Math.min(10, responseJson.moves.length); i++) {
     const move = responseJson.moves[i];
     const moveResponse = await fetch(move.move.url).catch(err => {
-      console.log("we're at least figuring out that the error is happening");
-      alert(err);
+      throw `Error in getting moves for Pokemon #${index}`;
     });
     const moveResponseJson = await moveResponse.json();
     const type = moveResponseJson.type.name;
@@ -84,18 +78,20 @@ async function getPokemonMoves(index) {
 
 async function getPokemonEvolution(index) {
   if (memoized[index].evolution !== undefined) {
-    console.log("using memoized evolution ");
     return memoized[index].evolution;
   }
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon-species/${index}`
   ).catch(err => {
-    console.log("we're at least figuring out that the error is happening");
-    alert(err);
+    throw `Error in getting species for Pokemon #${index}`;
   });
   const responseJson = await response.json();
 
-  const evolutionResponse = await fetch(responseJson.evolution_chain.url);
+  const evolutionResponse = await fetch(responseJson.evolution_chain.url).catch(
+    err => {
+      throw `Error in getting evolution chain for Pokemon #${index}`;
+    }
+  );
   const evolutionResponseJson = await evolutionResponse.json();
   let evolves_to = evolutionResponseJson.chain.evolves_to;
   const chain = [nameToIndex[evolutionResponseJson.chain.species.name]];

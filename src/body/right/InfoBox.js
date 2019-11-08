@@ -40,10 +40,6 @@ function InfoBox(props) {
           {currentPokemon.evolution && (
             <div className="spritesAndArrows">
               {currentPokemon.evolution.map((pokemonIndex, index) => {
-                console.log(
-                  "current pokemon evolution",
-                  currentPokemon.evolution
-                );
                 return (
                   <div className="spriteAndArrow" key={index}>
                     <img

@@ -7,61 +7,13 @@ Object {
     <div>
       <div
         class="content"
-      >
-        <div>
-          <div
-            class="searchContainer"
-          >
-            <div
-              class="searchBarContainer"
-            >
-              <input
-                class="searchBar"
-                data-testid="searchBar"
-                id="searchBar"
-                placeholder="Search by name, type, or number!"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <div
-            class="detailedView"
-          >
-            
-          </div>
-        </div>
-      </div>
+      />
     </div>
   </body>,
   "container": <div>
     <div
       class="content"
-    >
-      <div>
-        <div
-          class="searchContainer"
-        >
-          <div
-            class="searchBarContainer"
-          >
-            <input
-              class="searchBar"
-              data-testid="searchBar"
-              id="searchBar"
-              placeholder="Search by name, type, or number!"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="detailedView"
-        >
-          
-        </div>
-      </div>
-    </div>
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
