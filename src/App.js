@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import './App.css'
+import "./App.css";
 
-import AppHeader from './header/AppHeader'
-import AppBody from './body/AppBody'
+import AppHeader from "./header/AppHeader";
+import AppBody from "./body/AppBody";
 
 const App = () => {
-     return (
-          <div className="app">
-               <AppHeader />
-               <AppBody />
-          </div>
-     )
-}
+  return (
+    <div className="app">
+      <AppHeader />
+      <AppBody />
+    </div>
+  );
+};
 
-export default App
+export default App;

@@ -8,6 +8,7 @@ import { formatTypes, titleCase } from "../left/carousel/Pokemon";
 
 import { Squares } from "react-activity";
 import "react-activity/lib/Squares/Squares.css";
+import unknown from "../../images/unknown.png";
 
 function formatMoveName(moveName) {
   moveName = titleCase(moveName);
@@ -28,11 +29,15 @@ function InfoBox(props) {
     return (
       <div className="spritesAndArrows">
         {currentPokemon.evolution.map((pokemonIndex, index) => {
+          const sprite =
+            pokemonList[pokemonIndex - 1].sprite !== null
+              ? pokemonList[pokemonIndex - 1].sprite
+              : unknown;
           return (
             pokemonList[pokemonIndex - 1] && (
               <div className="spriteAndArrow" key={index}>
                 <img
-                  src={pokemonList[pokemonIndex - 1].sprite}
+                  src={sprite}
                   alt={"Image of " + pokemonList[pokemonIndex - 1].name}
                 />
                 {index !== currentPokemon.evolution.length - 1 && (
@@ -62,6 +67,10 @@ function InfoBox(props) {
     );
   }
 
+  function getSpriteSource() {
+    return currentPokemon.sprite !== null ? currentPokemon.sprite : unknown;
+  }
+
   if (currentPokemon !== undefined) {
     currentPokemon.moves = props.moves;
     currentPokemon.evolution = props.evolution;
@@ -69,7 +78,7 @@ function InfoBox(props) {
     return (
       <div className="infoBox" id={"infoBox" + currentPokemon.index}>
         <div className="pokemonHeader">
-          <img src={currentPokemon.sprite} alt={imgAlt} />
+          <img src={getSpriteSource()} alt={imgAlt} />
           <div className="pokemonName">{currentPokemon.name}</div>
           <div className="pokemonNumberAndType">
             {currentPokemon.number}

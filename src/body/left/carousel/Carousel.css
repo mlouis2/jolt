@@ -23,10 +23,3 @@
 .carousel ul {
   padding: 0px;
 }
-
-.carouselWrapper {
-  height: 100%;
-  float: left;
-  margin: 0 auto;
-  width: 65%;
-}

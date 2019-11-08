@@ -1,8 +1,16 @@
-const memoized = {};
-const nameToIndex = {};
+const MEMOIZED_KEY = "memo";
+const NAME_TO_INDEX_KEY = "nameToIndex";
+
+let memoized = {};
+let nameToIndex = {};
+
+const localStorage = window.localStorage;
+if (localStorage.getItem(MEMOIZED_KEY) !== null) {
+  memoized = JSON.parse(localStorage.getItem(MEMOIZED_KEY));
+}
 
 function getNumPokemon() {
-  return 20;
+  return 806;
 }
 
 function getDescription(json) {
@@ -16,12 +24,13 @@ function getDescription(json) {
 }
 
 async function getPokemonInfo(index) {
-  if (memoized[index]) {
+  if (memoized[index] !== undefined) {
     return {
       name: memoized[index].name,
       types: memoized[index].types,
       index,
-      sprite: memoized[index].sprite
+      sprite: memoized[index].sprite,
+      description: memoized[index].description
     };
   }
   const url = `https://pokeapi.co/api/v2/pokemon/${index}`;
@@ -36,7 +45,6 @@ async function getPokemonInfo(index) {
   const speciesResponseJson = await speciesResponse.json();
 
   const types = responseJson.types.map(type => type.type.name);
-  nameToIndex[responseJson.name] = index;
   const obj = {
     name: responseJson.name,
     types: types,
@@ -45,11 +53,12 @@ async function getPokemonInfo(index) {
     description: getDescription(speciesResponseJson)
   };
   memoized[index] = obj;
+  localStorage.setItem(MEMOIZED_KEY, JSON.stringify(memoized));
   return obj;
 }
 
 async function getPokemonMoves(index) {
-  if (memoized[index].moves) {
+  if (memoized[index].moves !== undefined) {
     return memoized[index].moves;
   }
   const response = await fetch(
@@ -73,7 +82,19 @@ async function getPokemonMoves(index) {
     });
   }
   memoized[index].moves = moves;
+  localStorage.setItem(MEMOIZED_KEY, JSON.stringify(memoized));
   return moves;
+}
+
+function getNameFromUrl(url) {
+  let ans = "";
+  for (let i = url.length - 2; i > 0; i--) {
+    if (url.charAt(i) === "/") {
+      break;
+    }
+    ans = url.charAt(i) + ans;
+  }
+  return ans;
 }
 
 async function getPokemonEvolution(index) {
@@ -94,14 +115,15 @@ async function getPokemonEvolution(index) {
   );
   const evolutionResponseJson = await evolutionResponse.json();
   let evolves_to = evolutionResponseJson.chain.evolves_to;
-  const chain = [nameToIndex[evolutionResponseJson.chain.species.name]];
+  const chain = [getNameFromUrl(evolutionResponseJson.chain.species.url)];
   while (evolves_to.length > 0) {
-    if (nameToIndex[evolves_to[0].species.name] !== undefined) {
-      chain.push(nameToIndex[evolves_to[0].species.name]);
+    if (getNameFromUrl(evolves_to[0].species.name) !== undefined) {
+      chain.push(getNameFromUrl(evolves_to[0].species.url));
     }
     evolves_to = evolves_to[0].evolves_to;
   }
   memoized[index].evolution = chain;
+  localStorage.setItem(MEMOIZED_KEY, JSON.stringify(memoized));
   return chain;
 }
 

@@ -11,6 +11,8 @@
   background-color: black;
   border-bottom: 5px solid black;
   border-right: 5px solid black;
+  height: 100px;
+  width: 100px;
 }
 
 .infoBox .pokemonName {
@@ -31,7 +33,9 @@
 .evolution img {
   background-color: white;
   border: none;
-  height: 95%;
+  height: 65px;
+  width: 65px;
+  margin-bottom: 5px;
 }
 
 .spritesAndArrows {

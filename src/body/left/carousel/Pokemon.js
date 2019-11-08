@@ -1,5 +1,7 @@
 import React from "react";
 
+import unknown from "../../../images/unknown.png";
+
 function titleCase(str) {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
@@ -17,7 +19,7 @@ function formatTypes(types) {
 }
 
 function Pokemon(
-  sprite = "https://images-na.ssl-images-amazon.com/images/I/51lh93vBeRL._SY679_.jpg",
+  sprite = unknown,
   name = "Pokemon",
   number = "?",
   types = "?",
@@ -25,6 +27,9 @@ function Pokemon(
   index
 ) {
   const imgAlt = "Image of the Pokémon " + name + ".";
+  if (sprite === null) {
+    sprite = unknown;
+  }
   return (
     <div key={index} className="pokemon" id={name}>
       <div className="pokemonHeader">
