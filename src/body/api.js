@@ -2,7 +2,7 @@ const memoized = {};
 const nameToIndex = {};
 
 function getNumPokemon() {
-  return 90;
+  return 20;
 }
 
 function getDescription(json) {
@@ -96,7 +96,9 @@ async function getPokemonEvolution(index) {
   let evolves_to = evolutionResponseJson.chain.evolves_to;
   const chain = [nameToIndex[evolutionResponseJson.chain.species.name]];
   while (evolves_to.length > 0) {
-    chain.push(nameToIndex[evolves_to[0].species.name]);
+    if (nameToIndex[evolves_to[0].species.name] !== undefined) {
+      chain.push(nameToIndex[evolves_to[0].species.name]);
+    }
     evolves_to = evolves_to[0].evolves_to;
   }
   memoized[index].evolution = chain;

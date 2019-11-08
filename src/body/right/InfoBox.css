@@ -2,7 +2,6 @@
   background-color: white;
   border: 5px solid black;
   height: 60vh;
-  margin: 0px 0px 50px 0px;
   text-align: -webkit-center;
   width: 80%;
 }
@@ -81,4 +80,12 @@
   font-family: "PokeThinFont";
   font-size: 14px;
   line-height: 20px;
+}
+
+.movesLoadingIcon {
+  margin-top: 30%;
+}
+
+.evolutionLoadingIcon {
+  margin-top: 6%;
 }

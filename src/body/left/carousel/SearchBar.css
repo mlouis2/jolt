@@ -1,45 +1,44 @@
-
 .searchContainer {
-     background-color: red;
-     border-bottom: 5px solid black;
-     height: 110px;
-     position: relative;
-     text-align: center;
-     width: 100%;
-     z-index: 1000;
+  background-color: red;
+  border-bottom: 5px solid black;
+  height: 110px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
 }
 
 .searchBarContainer {
-     background-color: white;
-     border: 5px solid black;
-     width: 400px;
-     font-size: 20px;
-     display: inline-block;
-     margin-top: 40px;
+  background-color: white;
+  border: 5px solid black;
+  width: 400px;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 30px;
 }
 
 .searchBar {
-     border: none;
-     float: left;
-     font-size: 20px;
-     height: 40px;
-     outline: none;
-     padding-left: 10px;
-     width: 95%;
+  border: none;
+  float: left;
+  font-size: 20px;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+  width: 95%;
 }
 
 .searchButton {
-     background: none;
-     border: none;
-     float: right;
+  background: none;
+  border: none;
+  float: right;
 }
 
 .searchButton:disabled {
-     opacity: 0.2;
+  opacity: 0.2;
 }
 
 .searchIcon {
-     height: 30px;
-     padding-top: 5px;
-     width: 30px;
+  height: 30px;
+  padding-top: 5px;
+  width: 30px;
 }

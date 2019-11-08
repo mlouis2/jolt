@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { render } from "react-dom";
+import "react-activity/lib/Squares/Squares.css";
 
 import "./Content.css";
 
 import { ResponsiveCarousel } from "./carousel/Carousel";
 import { titleCase, formatNumber, formatTypes } from "./carousel/Pokemon";
+import { Squares } from "react-activity";
 
 let memoizedInfo = [];
 
@@ -50,7 +53,13 @@ function Content(props) {
       </div>
     );
   } else {
-    return <div className="content" />;
+    return (
+      <div className="content">
+        <div className="loadingIcon">
+          <Squares color="black" size={100} speed={1} animating={true} />
+        </div>
+      </div>
+    );
   }
 }
 

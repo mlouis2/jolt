@@ -1,32 +1,33 @@
 .appHeader {
-     height: 14%;
+  height: 16%;
 }
 
 .title {
-     color: white;
-     float: left;
+  color: white;
+  float: left;
 }
 
 .pokeBall {
-     float: right;
-     height: 50px;
-     padding-top: 5px;
-     width: 50px;
+  float: right;
+  height: 50px;
+  padding-top: 5px;
+  width: 50px;
 }
 
 .titleBar {
-     align-items: center;
-     background-color: red;
-     border-bottom: 5px solid black;
-     color: white;
-     display: flex;
-     font-family: 'TitleSolid';
-     text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
-     font-size: 50px;
-     justify-content: center;
-     padding: 2% 0% 1% 0%;
-     position: absolute;
-     text-decoration: none;
-     width: 100%;
-     z-index: 5000;
+  align-items: center;
+  background-color: red;
+  border-bottom: 5px solid black;
+  color: white;
+  display: flex;
+  font-family: "TitleSolid";
+  height: 10%;
+  text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+  font-size: 50px;
+  justify-content: center;
+  padding: 2% 0% 1% 0%;
+  position: absolute;
+  text-decoration: none;
+  width: 100%;
+  z-index: 5000;
 }

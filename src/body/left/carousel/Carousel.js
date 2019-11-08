@@ -41,12 +41,14 @@ function ResponsiveCarousel(props) {
     }
   }
 
+  function handleScroll() {}
+
   useEffect(() => {
     setFilteredList(pokemonList);
   }, [pokemonList]);
 
   return (
-    <div>
+    <div onScroll={handleScroll}>
       <div className="searchContainer">
         <SearchInput />
       </div>
