@@ -22,5 +22,5 @@ it("can get pokemon evolution", async () => {
   await api.getPokemonInfo(2);
   await api.getPokemonInfo(3);
   const evolution = await api.getPokemonEvolution(1);
-  expect(evolution).toEqual([1, 2, 3]);
+  expect(evolution).toEqual(["1", "2", "3"]);
 });

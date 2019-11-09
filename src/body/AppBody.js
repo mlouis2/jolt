@@ -6,12 +6,13 @@ import Content from "./left/Content";
 import mockApi from "./fakeapi";
 import realApi from "./api.js";
 
-function AppBody() {
+function AppBody(props) {
   const useMock = false;
   const api = useMock ? mockApi : realApi;
+  const numPokemon = props.numPokemon;
   return (
     <div className="appBody">
-      <Content api={api} />
+      <Content api={api} numPokemon={numPokemon} />
     </div>
   );
 }

@@ -7,10 +7,13 @@ import mockApi from "../fakeapi";
 import realApi from "../api";
 
 const useMock = true;
+const testNumPokemon = 20;
 
 it("renders without crashing", async () => {
   await act(async () => {
-    const content = render(<Content api={useMock ? mockApi : realApi} />);
+    const content = render(
+      <Content api={useMock ? mockApi : realApi} numPokemon={testNumPokemon} />
+    );
     expect(content).toMatchSnapshot();
   });
 });
@@ -18,7 +21,7 @@ it("renders without crashing", async () => {
 it("lets user click on the next slide", async () => {
   await act(async () => {
     const { getByTestId } = render(
-      <Content api={useMock ? mockApi : realApi} />
+      <Content api={useMock ? mockApi : realApi} numPokemon={testNumPokemon} />
     );
     const secondSlide = await waitForElement(() => getByTestId("1"));
     expect(secondSlide).not.toBeNull();
@@ -30,7 +33,10 @@ it("updates info box when user clicks on next slide", async () => {
   let div;
   await act(async () => {
     div = document.createElement("div");
-    ReactDOM.render(<Content api={useMock ? mockApi : realApi} />, div);
+    ReactDOM.render(
+      <Content api={useMock ? mockApi : realApi} numPokemon={testNumPokemon} />,
+      div
+    );
   });
   const secondSlide = div.querySelector("#Ivysaur");
 

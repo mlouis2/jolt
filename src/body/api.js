@@ -10,7 +10,7 @@ if (localStorage.getItem(MEMOIZED_KEY) !== null) {
 }
 
 function getNumPokemon() {
-  return 806;
+  return 807;
 }
 
 function getDescription(json) {

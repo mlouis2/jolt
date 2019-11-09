@@ -7,13 +7,67 @@ Object {
     <div>
       <div
         class="content"
-      />
+      >
+        <div
+          class="loadingIcon"
+        >
+          <div
+            class="rai-activity-indicator undefined"
+            style="display: inline-block; font-size: 16px; line-height: 0;"
+          >
+            <div
+              class="rai-squares"
+              style="animation-duration: 0.8s; font-size: 100px;"
+            >
+              <div
+                class="rai-square"
+                style="animation-delay: -0.3s; background-color: black;"
+              />
+              <div
+                class="rai-square"
+                style="animation-delay: -0.2s; background-color: black;"
+              />
+              <div
+                class="rai-square"
+                style="animation-delay: -0.1s; background-color: black;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
       class="content"
-    />
+    >
+      <div
+        class="loadingIcon"
+      >
+        <div
+          class="rai-activity-indicator undefined"
+          style="display: inline-block; font-size: 16px; line-height: 0;"
+        >
+          <div
+            class="rai-squares"
+            style="animation-duration: 0.8s; font-size: 100px;"
+          >
+            <div
+              class="rai-square"
+              style="animation-delay: -0.3s; background-color: black;"
+            />
+            <div
+              class="rai-square"
+              style="animation-delay: -0.2s; background-color: black;"
+            />
+            <div
+              class="rai-square"
+              style="animation-delay: -0.1s; background-color: black;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

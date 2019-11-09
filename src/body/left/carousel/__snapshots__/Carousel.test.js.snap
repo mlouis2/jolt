@@ -327,7 +327,9 @@ Object {
 `;
 
 exports[`should start with empty search field 1`] = `
-<div>
+<div
+  onScroll={[Function]}
+>
   <div
     className="searchContainer"
   >

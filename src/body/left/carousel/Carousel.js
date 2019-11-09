@@ -64,7 +64,8 @@ function ResponsiveCarousel(props) {
         showStatus={false}
         useKeyboardArrows={true}
         width="100%"
-        centerMode={true}
+        swipeScrollTolerance={100}
+        emulateTouch={true}
       >
         {filteredList && pokemonList ? (
           (search.input !== "" ? filteredList : pokemonList).map(p => {

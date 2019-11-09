@@ -12,6 +12,7 @@ let memoizedInfo = [];
 
 function Content(props) {
   const api = props.api;
+  const numPokemon = props.numPokemon;
 
   const [result, setResult] = useState([]);
 
@@ -24,7 +25,6 @@ function Content(props) {
   }, []);
 
   function readData() {
-    const numPokemon = api.getNumPokemon();
     const allInfo = [];
     for (let index = 0; index < numPokemon; index++) {
       allInfo.push(api.getPokemonInfo(index + 1));
