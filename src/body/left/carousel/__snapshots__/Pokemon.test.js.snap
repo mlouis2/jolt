@@ -17,6 +17,7 @@ exports[`can create a pokemon 1`] = `
     >
       Maddiemon
     </div>
+    <br />
     <div
       className="pokemonNumberAndType"
     >
