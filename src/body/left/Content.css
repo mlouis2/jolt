@@ -17,7 +17,6 @@
 }
 
 .pokemonName {
-  width: calc(var(--pokemon-box-width) / 1.5);
   font-size: 40px;
   float: left;
   padding-left: 10px;
@@ -33,6 +32,7 @@
 }
 
 .pokemonDescription {
+  display: inline-block;
   font-family: "PokeThinFont";
   font-size: 20px;
   line-height: 30px;
