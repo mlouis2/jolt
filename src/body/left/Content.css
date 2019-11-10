@@ -17,6 +17,7 @@
 }
 
 .pokemonName {
+  width: calc(var(--pokemon-box-width) / 1.5);
   font-size: 40px;
   float: left;
   padding-left: 10px;

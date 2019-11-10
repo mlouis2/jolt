@@ -3,6 +3,7 @@
   border: 5px solid black;
   height: 60vh;
   text-align: -webkit-center;
+  width: 100%;
 }
 
 .infoBox img {

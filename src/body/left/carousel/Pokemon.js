@@ -35,6 +35,7 @@ function Pokemon(
       <div className="pokemonHeader">
         <img src={sprite} alt={imgAlt} />
         <div className="pokemonName">{name}</div>
+        <br></br>
         <div className="pokemonNumberAndType">
           {number} {types}
         </div>
