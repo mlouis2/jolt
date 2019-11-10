@@ -25,7 +25,6 @@ function Content(props) {
   }, []);
 
   function readData() {
-    console.log("num pokemon is ", numPokemon);
     const allInfo = [];
     for (let index = 0; index < numPokemon; index++) {
       allInfo.push(api.getPokemonInfo(index + 1));

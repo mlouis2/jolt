@@ -15,14 +15,11 @@
 }
 
 .titleBar {
-  align-items: center;
   background-color: red;
-  border-bottom: 5px solid black;
-  color: white;
   display: flex;
   font-family: "TitleSolid";
   height: 10%;
-  text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+  text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
   font-size: 50px;
   justify-content: center;
   padding: 2% 0% 1% 0%;
