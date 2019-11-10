@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
 import "react-activity/lib/Squares/Squares.css";
 
 import "./Content.css";

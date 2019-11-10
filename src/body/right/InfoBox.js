@@ -4,7 +4,7 @@ import "./InfoBox.css";
 import "../left/carousel/Carousel.css";
 import "../left/Content.css";
 
-import { formatTypes, titleCase } from "../left/carousel/Pokemon";
+import { titleCase } from "../left/carousel/Pokemon";
 
 import { Squares } from "react-activity";
 import "react-activity/lib/Squares/Squares.css";

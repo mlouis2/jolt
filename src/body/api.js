@@ -1,8 +1,6 @@
 const MEMOIZED_KEY = "memo";
-const NAME_TO_INDEX_KEY = "nameToIndex";
 
 let memoized = {};
-let nameToIndex = {};
 
 const localStorage = window.localStorage;
 if (localStorage.getItem(MEMOIZED_KEY) !== null) {
@@ -32,10 +30,10 @@ async function getPokemonInfo(index) {
   const url = `https://pokeapi.co/api/v2/pokemon/${index}`;
   const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${index}`;
   const response = await fetch(url).catch(err => {
-    throw `Error in getting info for Pokemon #${index}`;
+    throw new Error(`Error in getting info for Pokemon #${index}`);
   });
   const speciesResponse = await fetch(speciesUrl).catch(err => {
-    throw `Error in getting species for Pokemon #${index}`;
+    throw new Error(`Error in getting species for Pokemon #${index}`);
   });
   const responseJson = await response.json();
   const speciesResponseJson = await speciesResponse.json();
@@ -60,14 +58,14 @@ async function getPokemonMoves(index) {
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${index}`
   ).catch(err => {
-    throw `Error in getting info for Pokemon #${index}`;
+    throw new Error(`Error in getting info for Pokemon #${index}`);
   });
   const responseJson = await response.json();
   const moves = [];
   for (let i = 0; i < Math.min(10, responseJson.moves.length); i++) {
     const move = responseJson.moves[i];
     const moveResponse = await fetch(move.move.url).catch(err => {
-      throw `Error in getting moves for Pokemon #${index}`;
+      throw new Error(`Error in getting moves for Pokemon #${index}`);
     });
     const moveResponseJson = await moveResponse.json();
     const type = moveResponseJson.type.name;
@@ -100,13 +98,13 @@ async function getPokemonEvolution(index) {
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon-species/${index}`
   ).catch(err => {
-    throw `Error in getting species for Pokemon #${index}`;
+    throw new Error(`Error in getting species for Pokemon #${index}`);
   });
   const responseJson = await response.json();
 
   const evolutionResponse = await fetch(responseJson.evolution_chain.url).catch(
     err => {
-      throw `Error in getting evolution chain for Pokemon #${index}`;
+      throw new Error(`Error in getting evolution chain for Pokemon #${index}`);
     }
   );
   const evolutionResponseJson = await evolutionResponse.json();
