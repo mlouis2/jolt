@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import fakeapi from "./fakeapi";
 
-it("can get the number of pokemon", () => {
-  expect(fakeapi.getNumPokemon()).toEqual(20);
-});
-
 it("can get pokemon info", async () => {
   const info = await fakeapi.getPokemonInfo(1);
   expect(info.name).toEqual("bulbasaur");

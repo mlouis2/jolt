@@ -8,8 +8,10 @@ import AppBody from "./body/AppBody";
 import mockApi from "./body/fakeapi";
 import realApi from "./body/api";
 
+const NUM_POKEMON = 807;
+
 const App = props => {
-  const numPokemon = props.numpokemon || 807;
+  const numPokemon = props.numPokemon || NUM_POKEMON;
   const useMock = false;
   const api = useMock ? mockApi : realApi;
   return (
