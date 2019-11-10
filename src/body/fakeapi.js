@@ -2,11 +2,10 @@ import fakeData from "./fakeData.json";
 
 const data = fakeData;
 
-function getNumPokemon() {
-  return data.count;
-}
-
 async function getPokemonInfo(index) {
+  await data;
+  console.log("DATA", data);
+  console.log("index", index.toString());
   return {
     name: data[index.toString()].name,
     types: data[index.toString()].types,
@@ -26,7 +25,6 @@ async function getPokemonEvolution(index) {
 }
 
 export default {
-  getNumPokemon,
   getPokemonInfo,
   getPokemonMoves,
   getPokemonEvolution

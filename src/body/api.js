@@ -9,10 +9,6 @@ if (localStorage.getItem(MEMOIZED_KEY) !== null) {
   memoized = JSON.parse(localStorage.getItem(MEMOIZED_KEY));
 }
 
-function getNumPokemon() {
-  return 807;
-}
-
 function getDescription(json) {
   const flavor_text_entries = json.flavor_text_entries;
   for (let i = 0; i < flavor_text_entries.length; i++) {
@@ -128,7 +124,6 @@ async function getPokemonEvolution(index) {
 }
 
 export default {
-  getNumPokemon,
   getPokemonInfo,
   getPokemonMoves,
   getPokemonEvolution
