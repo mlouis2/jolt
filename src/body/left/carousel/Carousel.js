@@ -20,6 +20,7 @@ function pokemonContainsSearch(search, pokemon) {
   );
 }
 
+//The carousel that contains cards for each Pokemon.
 function ResponsiveCarousel(props) {
   const pokemonList = props.pokemonList;
   const api = props.api;
@@ -35,6 +36,7 @@ function ResponsiveCarousel(props) {
     setCurrentPokemonIndex(e);
   }
 
+  //When an item on the carousel is clicked, it should focus on that item.
   function onClick(e) {
     if (indexRef.current !== e) {
       indexRef.current = e;
@@ -42,17 +44,15 @@ function ResponsiveCarousel(props) {
     }
   }
 
-  function handleScroll() {}
-
+  //When the carousel is rendered, since there is no search, the filtered list
+  //should be the same as the original Pokemon list.
   useEffect(() => {
     setFilteredList(pokemonList);
   }, [pokemonList]);
 
   return (
-    <div onScroll={handleScroll}>
-      <div className="searchContainer">
-        <SearchInput />
-      </div>
+    <div className="searchContainer">
+      <SearchInput />
       <Carousel
         className="carousel"
         axis="vertical"
@@ -111,12 +111,15 @@ function ResponsiveCarousel(props) {
       }
     }, []);
 
+    //Unfocuses the search bar if vertical key arrows are pressed, since that
+    //should move the user through the carousel.
     function onKeyPressed(event) {
       if (verticalArrowKeyCodes.includes(event.keyCode)) {
         document.getElementById("searchBar").blur();
       }
     }
 
+    //Searches when the user inputs text.
     function handleTextInput(e) {
       const prev = searchRef.current;
       searchRef.current = e.target.value;
@@ -130,6 +133,7 @@ function ResponsiveCarousel(props) {
       }
     }
 
+    //Handles a search by filtering the Pokemon list.
     function handleSearch() {
       if (pokemonList) {
         setFilteredList(

@@ -2,10 +2,12 @@ import React from "react";
 
 import unknown from "../../../images/unknown.png";
 
+//Title cases strings, i.e. bulbasaur => Bulbasaur.
 function titleCase(str) {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
 
+//Formats Pokemon ID numbers, i.e. 4 ==> #004
 function formatNumber(number) {
   let numberAsString = number.toString();
   while (numberAsString.length < 3) {
@@ -14,10 +16,12 @@ function formatNumber(number) {
   return "#" + numberAsString;
 }
 
+//Formats Pokemon types, i.e. ["fire", "water"] => "fire/water"
 function formatTypes(types) {
   return types.map(s => titleCase(s)).join("/");
 }
 
+//Contains the information that goes in each card of the carousel.
 function Pokemon(
   sprite = unknown,
   name = "Pokemon",

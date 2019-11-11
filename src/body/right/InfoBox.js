@@ -12,6 +12,7 @@ import unknown from "../../images/unknown.png";
 
 const LOADING_ICON_SIZE = 16;
 
+//Formats a Pokemon's move name, i.e. razor-wind => Razor Wind.
 function formatMoveName(moveName) {
   moveName = titleCase(moveName);
   while (moveName.includes("-")) {
@@ -23,10 +24,12 @@ function formatMoveName(moveName) {
   return moveName;
 }
 
+//The info box contains the Pokemon's evolution chain and moves.
 function InfoBox(props) {
   const currentPokemon = props.currentPokemon;
   const pokemonList = props.pokemonList;
 
+  //Builds and returns the evolution chain.
   function getSpritesAndArrows() {
     return (
       <div className="spritesAndArrows">
@@ -53,6 +56,7 @@ function InfoBox(props) {
     );
   }
 
+  //Builds and returns the moveset, comprised of the first ten moves from the API.
   function getMoveset() {
     return (
       <div>
@@ -69,10 +73,13 @@ function InfoBox(props) {
     );
   }
 
+  //If the sprite has not yet loaded, returns an image of a question mark.
   function getSpriteSource() {
     return currentPokemon.sprite !== null ? currentPokemon.sprite : unknown;
   }
 
+  //If the current Pokemon is not yet defined, returns a loading screen. Otherwise,
+  //returns the info box with the Pokemon's information.
   if (currentPokemon !== undefined) {
     currentPokemon.moves = props.moves;
     currentPokemon.evolution = props.evolution;

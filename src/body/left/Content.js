@@ -11,11 +11,14 @@ const LOADING_ICON_SIZE = 100;
 
 let memoizedInfo = [];
 
+//Contains both the carousel and the info box on the right-hand side of the screen.
 function Content(props) {
   const api = props.api;
   const numPokemon = props.numPokemon;
   const [result, setResult] = useState([]);
 
+  //If the information is not yet memoized, performs API calls. Otherwise, simply
+  //sets the memoized data as the result.
   useEffect(() => {
     if (memoizedInfo.length === 0) {
       readData();
@@ -24,6 +27,7 @@ function Content(props) {
     }
   }, []);
 
+  //Works with fakeapi.js or api.js to retrieve the Pokemon data.
   function readData() {
     const allInfo = [];
     for (let index = 0; index < numPokemon; index++) {
@@ -46,6 +50,8 @@ function Content(props) {
     });
   }
 
+  //If we have the result (length > 0), returns the carousel. Otherwise, returns
+  //loading icons.
   if (result.length > 0) {
     return (
       <div className="content">
