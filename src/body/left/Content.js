@@ -7,12 +7,13 @@ import { ResponsiveCarousel } from "./carousel/Carousel";
 import { titleCase, formatNumber, formatTypes } from "./carousel/Pokemon";
 import { Squares } from "react-activity";
 
+const LOADING_ICON_SIZE = 100;
+
 let memoizedInfo = [];
 
 function Content(props) {
   const api = props.api;
   const numPokemon = props.numPokemon;
-
   const [result, setResult] = useState([]);
 
   useEffect(() => {
@@ -55,7 +56,12 @@ function Content(props) {
     return (
       <div className="content">
         <div className="loadingIcon">
-          <Squares color="black" size={100} speed={1} animating={true} />
+          <Squares
+            color="black"
+            size={LOADING_ICON_SIZE}
+            speed={1}
+            animating={true}
+          />
         </div>
       </div>
     );

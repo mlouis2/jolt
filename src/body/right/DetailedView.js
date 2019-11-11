@@ -9,6 +9,10 @@ function DetailedView(props) {
 
   const api = props.api;
 
+  useEffect(() => {
+    addEvolutionAndMoves();
+  }, [props.currentPokemon]);
+
   function addEvolutionAndMoves() {
     setEvolution([]);
     setMoves([]);
@@ -21,10 +25,6 @@ function DetailedView(props) {
       });
     }
   }
-
-  useEffect(() => {
-    addEvolutionAndMoves();
-  }, [props.currentPokemon]);
 
   return (
     <div className="detailedView">

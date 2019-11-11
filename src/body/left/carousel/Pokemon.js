@@ -7,11 +7,11 @@ function titleCase(str) {
 }
 
 function formatNumber(number) {
-  let strNumber = number.toString();
-  while (strNumber.length < 3) {
-    strNumber = "0" + strNumber;
+  let numberAsString = number.toString();
+  while (numberAsString.length < 3) {
+    numberAsString = "0" + numberAsString;
   }
-  return "#" + strNumber;
+  return "#" + numberAsString;
 }
 
 function formatTypes(types) {

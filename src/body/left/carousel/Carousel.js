@@ -8,6 +8,7 @@ import "./SearchBar.css";
 
 const verticalArrowKeyCodes = [37, 39];
 
+//Checks if the search contains a Pokemon's name, type, or number.
 function pokemonContainsSearch(search, pokemon) {
   const lowerCaseName = pokemon.name.toLowerCase();
   const lowerCaseTypes = pokemon.types.toLowerCase();

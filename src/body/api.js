@@ -1,4 +1,5 @@
 const MEMOIZED_KEY = "memo";
+const BASE_URL = "https://pokeapi.co/api/v2/";
 
 let memoized = {};
 
@@ -27,8 +28,8 @@ async function getPokemonInfo(index) {
       description: memoized[index].description
     };
   }
-  const url = `https://pokeapi.co/api/v2/pokemon/${index}`;
-  const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${index}`;
+  const url = `${BASE_URL}pokemon/${index}`;
+  const speciesUrl = `${BASE_URL}pokemon-species/${index}`;
   const response = await fetch(url).catch(err => {
     throw new Error(`Error in getting info for Pokemon #${index}`);
   });
@@ -55,9 +56,7 @@ async function getPokemonMoves(index) {
   if (memoized[index].moves !== undefined) {
     return memoized[index].moves;
   }
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${index}`
-  ).catch(err => {
+  const response = await fetch(`${BASE_URL}pokemon/${index}`).catch(err => {
     throw new Error(`Error in getting info for Pokemon #${index}`);
   });
   const responseJson = await response.json();
@@ -95,11 +94,11 @@ async function getPokemonEvolution(index) {
   if (memoized[index].evolution !== undefined) {
     return memoized[index].evolution;
   }
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon-species/${index}`
-  ).catch(err => {
-    throw new Error(`Error in getting species for Pokemon #${index}`);
-  });
+  const response = await fetch(`${BASE_URL}pokemon-species/${index}`).catch(
+    err => {
+      throw new Error(`Error in getting species for Pokemon #${index}`);
+    }
+  );
   const responseJson = await response.json();
 
   const evolutionResponse = await fetch(responseJson.evolution_chain.url).catch(

@@ -24,3 +24,17 @@ it("can get pokemon evolution", async () => {
   const evolution = await api.getPokemonEvolution(1);
   expect(evolution).toEqual(["1", "2", "3"]);
 });
+
+it("memoizes evolution", async () => {
+  // Need to preload 2 and 3 so that evolution chain is complete
+  await api.getPokemonInfo(2);
+  await api.getPokemonInfo(3);
+  const evolution = await api.getPokemonEvolution(1);
+  expect(evolution).toEqual(["1", "2", "3"]);
+  const memoizedEvolution = await api.getPokemonEvolution(1);
+  expect(memoizedEvolution).toEqual(["1", "2", "3"]);
+});
+
+// it("throws an error with invalid index", async () => {
+//   expect(() => api.getPokemonInfo(-1)).toThrow();
+// });

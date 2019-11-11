@@ -3,13 +3,14 @@ import fakeData from "./fakeData.json";
 const data = fakeData;
 
 async function getPokemonInfo(index) {
+  const indexAsString = index.toString();
   await data;
   return {
-    name: data[index.toString()].name,
-    types: data[index.toString()].types,
-    number: data[index.toString()].number,
-    sprite: data[index.toString()].sprite,
-    description: data[index.toString()].description,
+    name: data[indexAsString].name,
+    types: data[indexAsString].types,
+    number: data[indexAsString].number,
+    sprite: data[indexAsString].sprite,
+    description: data[indexAsString].description,
     index
   };
 }

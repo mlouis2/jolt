@@ -10,6 +10,8 @@ import { Squares } from "react-activity";
 import "react-activity/lib/Squares/Squares.css";
 import unknown from "../../images/unknown.png";
 
+const LOADING_ICON_SIZE = 16;
+
 function formatMoveName(moveName) {
   moveName = titleCase(moveName);
   while (moveName.includes("-")) {
@@ -91,7 +93,12 @@ function InfoBox(props) {
             getSpritesAndArrows()
           ) : (
             <div className="evolutionLoadingIcon">
-              <Squares color="black" size={16} speed={1} animating={true} />
+              <Squares
+                color="black"
+                size={LOADING_ICON_SIZE}
+                speed={1}
+                animating={true}
+              />
             </div>
           )}
         </div>
@@ -100,7 +107,12 @@ function InfoBox(props) {
             getMoveset()
           ) : (
             <div className="movesLoadingIcon">
-              <Squares color="black" size={16} speed={1} animating={true} />
+              <Squares
+                color="black"
+                size={LOADING_ICON_SIZE}
+                speed={1}
+                animating={true}
+              />
             </div>
           )}
         </div>
