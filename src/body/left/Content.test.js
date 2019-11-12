@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import Content from "./Content";
 import { render, waitForElement, fireEvent } from "@testing-library/react";
 import ReactTestUtils, { act } from "react-dom/test-utils";
-import mockApi from "../fakeapi";
-import realApi from "../api";
+import mockApi from "../PlaceholderApiService";
+import realApi from "../RealApiService";
 
 const useMock = true;
 const testNumPokemon = 20;

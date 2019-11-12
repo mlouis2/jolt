@@ -5,8 +5,8 @@ import "./App.css";
 import AppHeader from "./header/AppHeader";
 import AppBody from "./body/AppBody";
 
-import mockApi from "./body/fakeapi";
-import realApi from "./body/api";
+import mockApi from "./body/PlaceholderApiService";
+import realApi from "./body/RealApiService";
 
 const NUM_POKEMON = 807;
 

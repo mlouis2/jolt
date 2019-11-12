@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import api from "./api";
+import api from "./RealApiService";
 
 it("can get pokemon info", async () => {
   const info = await api.getPokemonInfo(1);
@@ -36,5 +36,7 @@ it("memoizes evolution", async () => {
 });
 
 // it("throws an error with invalid index", async () => {
-//   expect(() => api.getPokemonInfo(-1)).toThrow();
+//   expect(() => {
+//     await api.getPokemonInfo(-1)).toThrow();
+//   }
 // });
