@@ -3,6 +3,9 @@ import fakeData from "./fakeData.json";
 const data = fakeData;
 
 async function getPokemonInfo(index) {
+  if (index < 0) {
+    throw new Error(`Error in getting info for Pokemon #${index}`);
+  }
   const indexAsString = index.toString();
   await data;
   return {
@@ -16,10 +19,16 @@ async function getPokemonInfo(index) {
 }
 
 async function getPokemonMoves(index) {
+  if (index < 0) {
+    throw new Error(`Error in getting moves for Pokemon #${index}`);
+  }
   return data[index.toString()].moves;
 }
 
 async function getPokemonEvolution(index) {
+  if (index < 0) {
+    throw new Error(`Error in getting evolution for Pokemon #${index}`);
+  }
   return data[index.toString()].evolution;
 }
 

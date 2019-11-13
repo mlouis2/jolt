@@ -30,6 +30,7 @@ async function getPokemonInfo(index) {
   }
   const url = `${BASE_URL}pokemon/${index}`;
   const speciesUrl = `${BASE_URL}pokemon-species/${index}`;
+
   const response = await fetch(url).catch(err => {
     throw new Error(`Error in getting info for Pokemon #${index}`);
   });

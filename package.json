@@ -30,7 +30,9 @@
       "!**/coverage/**",
       "!**/build/**",
       "!**/src/index.js",
-      "!**/src/realApi.js",
+      "!**/src/body/api.js",
+      "!**/src/body/api.js-placeholder",
+      "!**/src/body/api.js-real",
       "!**/src/registerServiceWorker.js"
     ]
   },
