@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import api from "./RealApiService";
+import api from "./api-real";
 
 it("can get pokemon info", async () => {
   const info = await api.getPokemonInfo(1);

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import fakeapi from "./PlaceholderApiService";
+import fakeapi from "./api-placeholder";
 
 it("can get pokemon info", async () => {
   const info = await fakeapi.getPokemonInfo(1);
