@@ -40,10 +40,10 @@ it("updates info box when user clicks on next slide", async () => {
   });
   waitForDomChange({ div }).then(() => {
     const secondSlide = div.querySelector("#Ivysaur");
-
     expect(secondSlide).not.toBeNull();
     fireEvent.click(secondSlide);
 
     const secondSlideInfoBox = div.querySelector("#InfoBox1");
+    expect(secondSlideInfoBox).not.toBeNull();
   });
 });

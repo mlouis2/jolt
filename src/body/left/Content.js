@@ -32,8 +32,6 @@ function Content(props) {
 
   //Works with fakeapi.js or api.js to retrieve the Pokemon data.
   function readData() {
-    console.log("getting into read data...");
-    console.log("num pokmemon is " + numPokemon);
     const allInfo = [];
     for (let index = 0; index < numPokemon; index++) {
       allInfo.push(api.getPokemonInfo(index + 1));
