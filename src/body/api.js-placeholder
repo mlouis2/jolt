@@ -37,6 +37,7 @@ async function getPokemonEvolution(index) {
 }
 
 export default {
+  getMaxNumberOfPokemon,
   getPokemonInfo,
   getPokemonMoves,
   getPokemonEvolution
