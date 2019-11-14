@@ -2,6 +2,10 @@ import fakeData from "./fakeData.json";
 
 const data = fakeData;
 
+function getMaxNumberOfPokemon() {
+     return 20;
+}
+
 async function getPokemonInfo(index) {
   if (index < 0) {
     throw new Error(`Error in getting info for Pokemon #${index}`);

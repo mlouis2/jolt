@@ -7,10 +7,8 @@ import AppBody from "./body/AppBody";
 
 import api from "./body/api";
 
-const NUM_POKEMON = 807;
-
 const App = props => {
-  const numPokemon = props.numPokemon || NUM_POKEMON;
+  const numPokemon = props.numPokemon || null;
   return (
     <div className="app">
       <AppHeader />
