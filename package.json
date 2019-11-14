@@ -30,6 +30,7 @@
       "!**/coverage/**",
       "!**/build/**",
       "!**/src/index.js",
+      "!**/src/body/left/Content.js",
       "!**/src/body/api.js",
       "!**/src/body/api.js-placeholder",
       "!**/src/body/api.js-real",

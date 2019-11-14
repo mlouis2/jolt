@@ -14,8 +14,7 @@ let memoizedInfo = [];
 //Contains both the carousel and the info box on the right-hand side of the screen.
 function Content(props) {
   const api = props.api;
-  let numPokemon;
-  numPokemon = props.numPokemon
+  const numPokemon = props.numPokemon
     ? props.numPokemon
     : api.getMaxNumberOfPokemon();
   const [result, setResult] = useState([]);
@@ -23,11 +22,7 @@ function Content(props) {
   //If the information is not yet memoized, performs API calls. Otherwise, simply
   //sets the memoized data as the result.
   useEffect(() => {
-    if (memoizedInfo.length === 0) {
-      readData();
-    } else {
-      setResult(memoizedInfo);
-    }
+    memoizedInfo.length === 0 ? readData() : setResult(memoizedInfo);
   }, []);
 
   //Works with fakeapi.js or api.js to retrieve the Pokemon data.
