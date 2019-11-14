@@ -7,7 +7,7 @@ import AppBody from "./body/AppBody";
 
 import api from "./body/api";
 
-const App = props => {
+function App(props) {
   const numPokemon = props.numPokemon || null;
   return (
     <div className="app">
@@ -15,6 +15,6 @@ const App = props => {
       <AppBody numPokemon={numPokemon} api={api} />
     </div>
   );
-};
+}
 
 export default App;

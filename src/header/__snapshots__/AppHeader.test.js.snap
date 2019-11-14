@@ -11,6 +11,53 @@ Object {
         <div
           class="titleBar"
         >
+          <div
+            class="AudioButton"
+          >
+            <img
+              src="play.png"
+            />
+          </div>
+          <div
+            class="titleLinkContainer"
+          >
+            <a
+              class="titleLink"
+              href="/"
+            >
+              <div
+                class="title"
+              >
+                JOLT 
+              </div>
+              <img
+                alt="pokeball"
+                class="pokeBall"
+                src="pokeball.png"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="appHeader"
+    >
+      <div
+        class="titleBar"
+      >
+        <div
+          class="AudioButton"
+        >
+          <img
+            src="play.png"
+          />
+        </div>
+        <div
+          class="titleLinkContainer"
+        >
           <a
             class="titleLink"
             href="/"
@@ -27,31 +74,6 @@ Object {
             />
           </a>
         </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="appHeader"
-    >
-      <div
-        class="titleBar"
-      >
-        <a
-          class="titleLink"
-          href="/"
-        >
-          <div
-            class="title"
-          >
-            JOLT 
-          </div>
-          <img
-            alt="pokeball"
-            class="pokeBall"
-            src="pokeball.png"
-          />
-        </a>
       </div>
     </div>
   </div>,

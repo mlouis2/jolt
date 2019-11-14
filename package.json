@@ -34,7 +34,8 @@
       "!**/src/body/api.js",
       "!**/src/body/api.js-placeholder",
       "!**/src/body/api.js-real",
-      "!**/src/registerServiceWorker.js"
+      "!**/src/registerServiceWorker.js",
+      "!**/src/header/Audio.js"
     ]
   },
   "browserslist": {

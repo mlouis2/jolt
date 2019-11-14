@@ -21,10 +21,17 @@
   height: 10%;
   text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
   font-size: 50px;
-  justify-content: center;
   padding: 2% 0% 1% 0%;
   position: absolute;
   text-decoration: none;
   width: 100%;
   z-index: 5000;
+}
+
+.titleLinkContainer {
+  display: flex;
+  justify-content: center;
+  margin-right: 80px;
+  text-align: center;
+  width: 100%;
 }

@@ -1,0 +1,11 @@
+.AudioButton {
+  float: left;
+  height: 45px;
+  margin-left: 30px;
+  width: 50px;
+}
+
+.AudioButton img {
+  height: 50px;
+  width: 50px;
+}
