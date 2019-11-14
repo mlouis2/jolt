@@ -5,20 +5,22 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="searchContainer"
-      >
+      <div>
         <div
-          class="searchBarContainer"
+          class="searchContainer"
         >
-          <input
-            class="searchBar"
-            data-testid="searchBar"
-            id="searchBar"
-            placeholder="Search by name, type, or number!"
-            type="text"
-            value="A"
-          />
+          <div
+            class="searchBarContainer"
+          >
+            <input
+              class="searchBar"
+              data-testid="searchBar"
+              id="searchBar"
+              placeholder="Search by name, type, or number!"
+              type="text"
+              value="A"
+            />
+          </div>
         </div>
         <div
           class="carousel"
@@ -56,20 +58,22 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="searchContainer"
-    >
+    <div>
       <div
-        class="searchBarContainer"
+        class="searchContainer"
       >
-        <input
-          class="searchBar"
-          data-testid="searchBar"
-          id="searchBar"
-          placeholder="Search by name, type, or number!"
-          type="text"
-          value="A"
-        />
+        <div
+          class="searchBarContainer"
+        >
+          <input
+            class="searchBar"
+            data-testid="searchBar"
+            id="searchBar"
+            placeholder="Search by name, type, or number!"
+            type="text"
+            value="A"
+          />
+        </div>
       </div>
       <div
         class="carousel"
@@ -164,20 +168,22 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="searchContainer"
-      >
+      <div>
         <div
-          class="searchBarContainer"
+          class="searchContainer"
         >
-          <input
-            class="searchBar"
-            data-testid="searchBar"
-            id="searchBar"
-            placeholder="Search by name, type, or number!"
-            type="text"
-            value=""
-          />
+          <div
+            class="searchBarContainer"
+          >
+            <input
+              class="searchBar"
+              data-testid="searchBar"
+              id="searchBar"
+              placeholder="Search by name, type, or number!"
+              type="text"
+              value=""
+            />
+          </div>
         </div>
         <div
           class="carousel"
@@ -215,20 +221,22 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="searchContainer"
-    >
+    <div>
       <div
-        class="searchBarContainer"
+        class="searchContainer"
       >
-        <input
-          class="searchBar"
-          data-testid="searchBar"
-          id="searchBar"
-          placeholder="Search by name, type, or number!"
-          type="text"
-          value=""
-        />
+        <div
+          class="searchBarContainer"
+        >
+          <input
+            class="searchBar"
+            data-testid="searchBar"
+            id="searchBar"
+            placeholder="Search by name, type, or number!"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="carousel"
@@ -319,21 +327,23 @@ Object {
 `;
 
 exports[`should start with empty search field 1`] = `
-<div
-  className="searchContainer"
->
+<div>
   <div
-    className="searchBarContainer"
+    className="searchContainer"
   >
-    <input
-      className="searchBar"
-      data-testid="searchBar"
-      id="searchBar"
-      onChange={[Function]}
-      placeholder="Search by name, type, or number!"
-      type="text"
-      value=""
-    />
+    <div
+      className="searchBarContainer"
+    >
+      <input
+        className="searchBar"
+        data-testid="searchBar"
+        id="searchBar"
+        onChange={[Function]}
+        placeholder="Search by name, type, or number!"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
   <div
     className="carousel"
