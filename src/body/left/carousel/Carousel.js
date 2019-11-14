@@ -51,8 +51,10 @@ function ResponsiveCarousel(props) {
   }, [pokemonList]);
 
   return (
-    <div className="searchContainer">
-      <SearchInput />
+    <div>
+      <div className="searchContainer">
+        <SearchInput />
+      </div>
       <Carousel
         className="carousel"
         axis="vertical"
