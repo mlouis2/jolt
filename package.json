@@ -2,6 +2,7 @@
   "name": "jolt",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lmu-cmsi370-fall2019.github.io/front-end-development-mlouis2",
   "dependencies": {
     "@testing-library/react": "^9.3.0",
     "lint": "^0.7.0",
@@ -17,9 +18,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "react-test-renderer": "^16.9.0",
     "sinon": "^7.4.2"
   },

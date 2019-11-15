@@ -1,5 +1,6 @@
 .carousel {
   float: left;
+  overflow: hidden;
   width: 65%;
 }
 
